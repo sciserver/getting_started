@@ -1,0 +1,3 @@
+[submodule "Astronomy/sdss_mosaics/MontageNotebooks"]
+	path = Astronomy/sdss_mosaics/MontageNotebooks
+	url = https://github.com/Caltech-IPAC/MontageNotebooks.git
