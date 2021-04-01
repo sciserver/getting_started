@@ -1,3 +1,9 @@
 [submodule "Astronomy/sdss_mosaics/MontageNotebooks"]
 	path = Astronomy/sdss_mosaics/MontageNotebooks
 	url = https://github.com/Caltech-IPAC/MontageNotebooks.git
+[submodule "Astronomy/Teaching/Astro101"]
+	path = Astronomy/Teaching/Astro101
+	url = https://github.com/sciserver/astro101.git
+[submodule "Astronomy/Teaching/Labs"]
+	path = Astronomy/Teaching/Labs
+	url = https://github.com/sciserver/astronomy-labs.git
