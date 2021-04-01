@@ -7,3 +7,6 @@
 [submodule "Astronomy/Teaching/Labs"]
 	path = Astronomy/Teaching/Labs
 	url = https://github.com/sciserver/astronomy-labs.git
+[submodule "Example-Notebooks"]
+	path = Example-Notebooks
+	url = https://github.com/sciserver/Example-Notebooks.git
