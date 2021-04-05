@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Using SAMP to exchange spectra</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+<div class="crosslinks"><ul class='nav'> <li class="prev"> <a 
+href="sun243se5.html" >&#8592Prev</a>&#x00A0;</li> <li class="title">SPLAT-VO &#x2013; A VO-enabled Spectral Analysis Tool</li> <li class="next"><a 
+href="sun243se7.html" >Next&#8594</a>&#x00A0;</li> <li class="toc"><a 
+href="sun243.html#toc">TOC &#8593</a></li> </ul></div>
+<h3 class="sectionHead"><span class="titlemark">6    </span> <a 
+ id="x7-490006"></a>Using SAMP to exchange spectra<a name="xref_interop"></a></h3>
+<div class="sectionTOCS">
+</div>
+<!--l. 3656--><p class="noindent" ><span class="sf">SPLAT-VO </span>&#x00A0;can communicate with other desktop tools using
+<a 
+href="http://www.ivoa.net/samp/" >SAMP</a><span class="footnote-mark"><a 
+href="#fn5x0" id="fn5x0-bk"><sup class="textsuperscript">5</sup></a></span><a 
+ id="x7-49001f5"></a>
+(Simple Applications Messaging Protocol).
+<!--l. 3660--><p class="noindent" >The main job that can be done using SAMP is to exchange spectra. If another tool sends a spectrum to
+<span class="sf">SPLAT-VO </span>, it will appear in the global list as if it had just been loaded. Conversely, <span class="sf">SPLAT-VO </span>&#x00A0;can
+send a spectrum to another tool, which will probably respond in a similar way. To send from
+<span class="sf">SPLAT-VO </span>, select a spectrum in the global list, and then use the <b>Broadcast spectrum</b> or <b>Send
+spectrum to &#x2026;</b> options in the <b>Interop</b> menu. The Broadcast option sends to all listening tools, while the
+Send option sends only to a single selected tool; you choose which one from the submenu on the
+right. Only tools which (claim they) know what to do with spectral data will be listed; if
+none of the currently-registered tools is prepared to accept spectra, the Send option will be
+unavailable.
+<!--l. 3672--><p class="noindent" >You can also send the results of a SSA or ObsCore query as a table from the <b>Query VO for spectra</b>
+window. Again, use the <b>Broadcast</b> and <b>Send</b> options from the <b>Interop</b> menu to do this. If another tool
+sends a table containing query results, <span class="sf">SPLAT-VO </span>&#x00A0;will receive and open it in the <b>Query VO for
+spectra</b> window.
+<!--l. 3678--><p class="noindent" >The communication architecture of SAMP uses a central &#x201C;Hub&#x201D; process to pass messages between
+registered applications, so a hub must be running in order for the messaging to operate.
+If a hub is running when <span class="sf">SPLAT-VO </span>&#x00A0;starts, or if one starts up while <span class="sf">SPLAT-VO </span>&#x00A0;is in
+operation, it will connect to it automatically, unless you have started <span class="sf">SPLAT-VO </span>&#x00A0;with the
+<span class="obeylines-h"><span class="verb">--interop&#x00A0;none</span></span> command-line option. Other tools have their own policies for connecting to the hub,
+but in general it is a good idea to start a hub first before starting up the tools which you
+want to talk to it. A hub can be started from within <span class="sf">SPLAT-VO </span>&#x00A0;if required. The <span class="obeylines-h"><span class="verb">--hub</span></span>
+or <span class="obeylines-h"><span class="verb">--exthub</span></span> command-line flags start an &#x201C;internal&#x201D; or &#x201C;external&#x201D; hub respectively; the
+difference is that an internal hub will terminate when <span class="sf">SPLAT-VO </span>&#x00A0;exits, while an external one
+continues running in its own process. Alternatively, a hub can be started from within the
+GUI.
+<!--l. 3692--><p class="noindent" >The <b>SAMP control</b> button is visible in the browser window toolbar. Its appearance changes according
+                                                                                       
+                                                                                       
+to whether <span class="sf">SPLAT-VO </span>&#x00A0;is currently registered: <img 
+src="sampgo.gif" alt="PIC"  
+>  or unregistered: <img 
+src="samp.gif" alt="PIC"  
+> . In either case, clicking the
+button will show the SAMP window.
+<div class="center">
+<img 
+src="sampwindow.gif" alt="PIC"  
+> </div>
+<!--l. 3700--><p class="noindent" >The left hand panel shows which applications are registered, and the right hand panel gives you
+information about the selected one; it&#x2019;s not necessary to understand this in detail, though some of the
+information is self-explanatory. If no applications show up in the list, then <span class="sf">SPLAT-VO </span>&#x00A0;is not
+registered, most likely because no hub is running. Clicking on the <b>(Un)Register with Hub</b> button will
+give you a chance to start one. The other tabs in the window provide information about messages sent
+to and from <span class="sf">SPLAT-VO </span>. They can be useful to see whether spectra which have been sent have arrived
+safely or not.
+<!--l. 3711--><p class="noindent" >For those interested in the technical details, the domain-specific SAMP MTypes which <span class="sf">SPLAT-VO
+</span>&#x00A0;knows about are:
+     <ul class="itemize1">
+     <li class="itemize"><code>spectrum.load.ssa-generic</code>: send and receive spectra
+     </li>
+     <li class="itemize"><code>table.load.votable</code>, <code>table.load.fits</code>: send and receive SSA query results, or spectra</li></ul>
+<!--l. 3720--><p class="noindent" ><b>Display options</b>
+<!--l. 3722--><p class="noindent" >The <b>Interop</b> menu contains some options that will affect the way spectra coming from SAMP will be
+displayed in <span class="sf">SPLAT-VO </span>:
+     <ul class="itemize1">
+     <li class="itemize">Same window for SAMP Spectra - When checked, all incoming SAMP spectra will be displayed
+     in the same plot window.
+          <ul class="itemize2">
+          <li class="itemize">overwrite spectra - overwrite the existing spectra in the plot window (only the latest
+          SAMP spectrum will be displayed).</li></ul>
+     </li>
+     <li class="itemize">Handle table.load.votable as spectra - Set whether the incoming data of this type should be
+     handled as spectrum or list of spectra.
+     </li>
+     <li class="itemize">Open SAMP coords in SSAP window - If a client sends coordinates via SAMP, add the
+     coordinates to and open the SSAP browser window to start a search for objects at this
+     position.
+     </li>
+     <li class="itemize">Open SAMP coords in ObsCore window - If another client sends coordinates via SAMP, add the
+     coordinates to and open the ObsCore browser window to start a search for objects at this
+     position.
+     </li></ul>
+<!--l. 3735--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+<div class="footnotes"><!--l. 3657--><p class="noindent" ><span class="footnote-mark"><a 
+href="#fn5x0-bk" id="fn5x0"><sup class="textsuperscript">5</sup></a></span>http://www.ivoa.net/samp/                                                             </div> <div class="crosslinks">
+<div class="copyright"><span class="pushright">Copyright &#x00A9;&#x00A0;2001-2005 Council for the Central Laboratory of the Research Councils <br 
+class="newline" />Copyright &#x00A9;&#x00A0;2006-2007 Particle Physics and Astronomy Research Council <br 
+class="newline" />Copyright &#x00A9;&#x00A0;2007-2009 Science and Technology Facilities Council <br 
+class="newline" />Copyright &#x00A9;&#x00A0;2010-2017 Peter W. Draper <br 
+class="newline" />Copyright &#x00A9;&#x00A0;2013 German Astrophysical Virtual Observatory (GAVO)</span></div> <ul class='nav'> <li class="prev"> <a 
+href="sun243se5.html" >&#8592Prev</a>&#x00A0;</li> <li class="title">SPLAT-VO &#x2013; A
+VO-enabled Spectral Analysis Tool</li> <li class="next"><a 
+href="sun243se7.html" >Next&#8594</a>&#x00A0;</li> <li class="toc"><a 
+href="sun243.html#toc">TOC &#8593</a></li> </ul></div>
+<!--l. 3736--><p class="noindent" ><a 
+ id="tailsun243se6.html"></a> 
+</body> 
+</html>

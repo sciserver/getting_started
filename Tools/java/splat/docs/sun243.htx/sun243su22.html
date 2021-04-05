@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>The filter spectrum window</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+
+<h4 class="subsectionHead"><span class="titlemark">3.19    </span> <a 
+ id="x28-4100019"></a>The filter spectrum window<a name="xref_filter_window"></a></h4>
+<!--l. 2973--><p class="noindent" >This window provides the ability to filter the current spectrum displayed in a plot.
+<div class="center">
+<img 
+src="filterwindow.gif" alt="PIC"  
+> </div>
+<!--l. 2978--><p class="noindent" >The various options are:
+     <ul class="itemize1">
+     <li class="itemize"><code>Average</code> take the running average value over a number of positions.
+     </li>
+     <li class="itemize"><code>Rebin</code> rebin a spectrum so that one output value equals the mean of a number of input
+     values.
+     </li>
+     <li class="itemize"><code>Median</code> take the running median value over a number of positions.
+     </li>
+     <li class="itemize"><code>Profile</code> smooth  the  values  using  a  profile  matched  to  typical  line  shapes,  Gaussian,
+     Lorentzian and Voigt and the standard Hanning, Hamming, Welch and Barlett filters.
+     </li>
+     <li class="itemize"><code>Wavelet</code> use  various  wavelet  filters  to  convert  the  spectrum  into  multi-resolution
+     coefficients, removing a fraction of the coefficients, thus <em>denoising</em> the spectrum.
+     </li>
+     <li class="itemize"><code>Spectrum</code> smooth the values using a profile defined in another spectrum (allows you to
+     create kernels that match some shape, rather than just the standard profiles).</li></ul>
+<!--l. 2998--><p class="noindent" >You can define ranges of the spectrum to apply the filter over (except for <b>Rebin</b>, that always applies to
+the whole spectrum, which is what happens for all filters if you&#x2019;ve not defined any ranges).
+Depending on whether you&#x2019;ve selected <b>Filter inside ranges</b> or not the ranges are used to define the
+parts of the spectrum to filter, or not to filter. Parts which are not filtered do not form part of the result
+spectrum.
+<!--l. 3005--><p class="noindent" ><b>Command Buttons</b>
+                                                                                       
+                                                                                       
+     <ul class="itemize1">
+     <li class="itemize"><b>Filter</b> Filters the spectrum and displays the result in the plot.
+     </li>
+     <li class="itemize"><b>Filter (Replace)</b> Same as <b>Filter</b>, except the current spectrum is removed so you only see
+     the filtered one.
+     </li>
+     <li class="itemize"><b>Reset</b> Removes all filtered spectra (from the plot and global list) and erases the ranges.
+     </li>
+     <li class="itemize"><b>Reset (Replace)</b> Also removes all filtered spectra, but restores the spectrum first removed
+     by  <b>Filter  (Replace)</b>  Effectively  undoes  the  first  <b>Filter  (Replace)</b>,  since  the  last  <b>Reset
+     (Replace)</b>
+     </li></ul>
+<!--l. 3025--><p class="noindent" ><b>Accelerator keys</b>
+     <ul class="itemize1">
+     <li class="itemize"><b>Control-f</b> Apply current filter to spectrum.
+     </li>
+     <li class="itemize"><b>Control-l</b> Apply current filter to spectrum and only display the new spectrum.
+     </li>
+     <li class="itemize"><b>Control-p</b> Reset interface after a filter replace.
+     </li>
+     <li class="itemize"><b>Control-r</b> Reset interface clearing any ranges and new spectra.
+     </li>
+     <li class="itemize"><b>Control-d</b> Add a coordinate range (interactive or non-interactive).
+     </li>
+     <li class="itemize"><b>Control-e</b> Delete the selected coordinate ranges.
+     </li>
+     <li class="itemize"><b>Control-w</b> Close the window.
+     </li>
+     <li class="itemize"><b>F1</b> Display help on <span class="sf">SPLAT-VO </span>.
+     </li>
+     <li class="itemize"><b>Shift-F1</b> Display help on window.</li></ul>
+<!--l. 3042--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<!--l. 3043--><p class="noindent" ><a 
+ id="tailsun243su22.html"></a> 
+</body> 
+</html>

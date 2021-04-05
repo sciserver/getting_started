@@ -1,0 +1,73 @@
+# Star2html latex2html defaults file.
+$ADDRESS = '<I><BR>Starlink User Note 243<BR>Margarida Castro Neves<BR>Fri May 18 14:19:15 2018<BR>E-mail:<A HREF="mailto:ussc@star.rl.ac.uk">ussc@star.rl.ac.uk</A><BR><BR>Copyright &copy; 2018 Science and Technology Facilities Council<BR></I>'; 
+$TITLE = ''; 
+$NO_NAVIGATION = 0; 
+$TOP_NAVIGATION = 1; 
+$BOTTOM_NAVIGATION = 1; 
+$AUTO_NAVIGATION = 0; 
+$INDEX_IN_NAVIGATION = 1; 
+$CONTENTS_IN_NAVIGATION = 1; 
+$NEXT_PAGE_IN_NAVIGATION = 1; 
+$PREVIOUS_PAGE_IN_NAVIGATION = 1; 
+$INFO = 1; 
+$SHOW_SECTION_NUMBERS = 0; 
+$LINE_WIDTH = 500; 
+$WORDS_IN_PAGE = 200; 
+$default_language = english; 
+$WORDS_IN_NAVIGATION_PANEL_TITLES = 4; 
+$MATH_SCALE_FACTOR = 1.5; 
+$FIGURE_SCALE_FACTOR = 1; 
+$TRANSPARENT_FIGURES = 1; 
+$PAPERSIZE = a3; 
+$ICONSERVER = '.'; 
+$WHITE_BACKGROUND = 1; 
+$LATEX_COLOR = '\pagecolor{white}'; 
+sub top_navigation_panel {
+
+    #  Start with a horizontal rule (3-d dividing line)
+    "<BR> <HR>".
+
+    # Now add a few buttons with a space between them
+    "$NEXT $UP $PREVIOUS $CONTENTS $INDEX $CUSTOM_BUTTONS" .
+
+    "<BR>\n" .          # Line break
+
+    # If ``next'' section exists, add its title to the navigation panel
+    ($NEXT_TITLE ? "<B> Next:</B> $NEXT_TITLE<BR>\n" : undef) .
+
+    # Similarly with the ``up'' title ...
+    ($UP_TITLE ? "<B>Up:</B> $UP_TITLE<BR>\n" : undef) .
+
+    # ... and the ``previous'' title
+    ($PREVIOUS_TITLE ? "<B> Previous:</B> $PREVIOUS_TITLE\n" : undef) .
+
+    #  Line Break, horizontal rule (3-d dividing line) and new paragraph
+    "<BR> <HR> <P>\n"
+}
+
+sub bot_navigation_panel {
+
+    #  Start with a horizontal rule (3-d dividing line)
+    "<BR> <HR>".
+
+    # Now add a few buttons with a space between them
+    "$NEXT $UP $PREVIOUS $CONTENTS $INDEX $CUSTOM_BUTTONS" .
+
+    "<BR>\n" .          # Line break
+
+    # If ``next'' section exists, add its title to the navigation panel
+    ($NEXT_TITLE ? "<B> Next:</B> $NEXT_TITLE<BR>\n" : undef) .
+
+    # Similarly with the ``up'' title ...
+    ($UP_TITLE ? "<B>Up:</B> $UP_TITLE<BR>\n" : undef) .
+
+    # ... and the ``previous'' title
+    ($PREVIOUS_TITLE ? "<B> Previous:</B> $PREVIOUS_TITLE\n" : undef) .
+
+    #  Line Break, horizontal rule (3-d dividing line) and new paragraph
+    "<BR> <HR> <P>\n"
+}
+
+$WORDS_IN_NAVIGATION_PANEL_TITLES=20;
+1;
+1;

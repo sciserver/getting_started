@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Displaying a spectrum</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+
+<h4 class="subsectionHead"><span class="titlemark">2.1    </span> <a 
+ id="x6-50001"></a>Displaying a spectrum<a name="xref_displaying_a_spectrum"></a></h4>
+<!--l. 192--><p class="noindent" >To start <span class="sf">SPLAT-VO </span>&#x00A0;you should just need to type the command:
+     <div class="quote">
+     <div class="fancyvrb" id="fancyvrb3">  <a 
+ id="x6-5002r1"></a>&#x00A0;&#x00A0;%&#x00A0;splat&#x00A0;&#x0026;</div>
+     </div>
+<!--l. 198--><p class="noindent" >This assumes that you have <span class="sf">SPLAT-VO </span>&#x00A0;installed on your system as part of a standard Starlink
+installation. If not then you&#x2019;ll need follow any installation and pre-startup instructions that you have
+before using this command.
+<!--l. 203--><p class="noindent" >When <span class="sf">SPLAT-VO </span>&#x00A0;appears it should look something like:
+<div class="center">
+<img 
+src="browser1.gif" alt="PIC"  
+> </div>
+<!--l. 207--><p class="noindent" >This is the main <code>browser</code> window. It has a list containing all the available spectra (in what we call the
+&#x2018;global list&#x2019;, but has been traditionally referred to as the &#x2018;stack&#x2019;). Using this window you can add, save
+and remove spectra from the list, you can change how a spectrum draws itself, in all the
+places that it is shown and make a spectrum add itself to a plot &#x2013; this is how you view
+spectra.
+<!--l. 214--><p class="noindent" >You can also do things like change the look and feel of the whole application (there are different colour
+and font schemes), perform some quite primitive mathematical operations on or between
+the spectra, run through an animated display sequence of some or all of the spectra, set
+the spectra coordinate systems and modify/inspect their values. So things that apply to
+each spectrum, wherever it is shown, or the program as a whole are generally done in this
+window.
+<!--l. 222--><p class="noindent" >To open your first spectrum select the <b>Open</b> item in the <b>File</b> menu. This will create a familiar
+open file dialogue window. Just navigate to your spectrum, select it, and press <b>Open</b> to
+proceed.
+<!--l. 227--><p class="noindent" >Alternatively you could have supplied the spectrum you want to use on the command-line:
+     <div class="quote">
+     <div class="fancyvrb" id="fancyvrb4">  <a 
+ id="x6-5004r1"></a>&#x00A0;&#x00A0;%&#x00A0;splat&#x00A0;&#x003C;spectrum_file&#x003E;&#x00A0;&#x0026;</div>
+     </div>
+                                                                                       
+                                                                                       
+<!--l. 234--><p class="noindent" >Which will read the spectrum stored in the named file. <span class="sf">SPLAT-VO </span>&#x00A0;will read spectra stored in
+most astronomical formats (Starlink NDF, FITS spectra and tables, VOTables, simple TEXT
+files).
+<!--l. 238--><p class="noindent" >Now that you&#x2019;ve actually read in a spectrum it will be immediately displayed in a &#x2018;plot&#x2019;. Have a look
+at this plot window briefly, if you want, but close it before proceeding (to close it select the
+<b>Close</b> item in its <b>File</b> menu). You really need to understand how to display a spectrum in a
+plot yourself, if you&#x2019;re to gain complete control over the creation of plots and what they
+display.
+<!--l. 246--><p class="noindent" >The browser window (once again on its own) should now appear something like:
+<div class="center">
+<img 
+src="browser2.gif" alt="PIC"  
+> </div>
+<!--l. 251--><p class="noindent" >Now to re-create a plot and display a spectrum in it the hard way. Actually this couldn&#x2019;t be simpler,
+just &#x2018;double click&#x2019; on the name in the <b>Global list of spectra</b>. Another way to achieve the same
+effect is to <code>select</code> the name (by just clicking on it once, you can tell it&#x2019;s selected when it
+becomes highlighted, as shown above) and choose the display selected spectra button in the
+toolbar. This is the button that looks like <img 
+src="display.gif" alt="PIC"  
+>  (it&#x2019;s meant to represent a spectrum with axes
+drawn in a plot). If you&#x2019;re successful then a window looking like this should appear as
+before:
+<div class="center">
+<img 
+src="plot1.gif" alt="PIC"  
+> </div>
+<!--l. 264--><p class="noindent" >Since <span class="sf">SPLAT-VO </span>&#x00A0;is meant to be capable of displaying many spectra (sometimes in the same
+plot as we&#x2019;ll see in the next section), you should confirm this by creating a second plot
+window, by just performing the same operation again (<em>i.e.</em>&#x00A0;double click on the spectrum
+name).
+<!--l. 270--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<!--l. 271--><p class="noindent" ><a 
+ id="tailsun243su1.html"></a> 
+</body> 
+</html>

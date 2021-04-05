@@ -1,0 +1,201 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>The polynomial fitting window</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+
+<h4 class="subsectionHead"><span class="titlemark">3.16    </span> <a 
+ id="x25-3700016"></a>The polynomial fitting window<a name="xref_poly_window"></a></h4>
+<!--l. 2503--><p class="noindent" >The polynomial fitting window allows you to fit a polynomial of selected degree to various selected
+ranges of the current spectrum. You can select to use errors as weights for the fit and can save the fits
+on the global list as spectra in their own right. Fitting a polynomial is generally a pre-requisite to
+fitting spectral lines.
+<div class="center">
+<img 
+src="polynomialfitwindow.gif" alt="PIC"  
+> </div>
+<!--l. 2511--><p class="noindent" >The <b>Degree of polynomial</b> drop-down list shows a series possible values for the degree of the
+polynomial that will be fitted. Obviously this should be chosen to match the expected complexity of
+the background.
+<!--l. 2516--><p class="noindent" >The <b>Use errors as weights</b> checkbox is only effective if the spectrum being fitted has data
+errors.
+<!--l. 2519--><p class="noindent" >The <b>Subtract fit from spectrum</b> series of radio buttons allows you to ask for the creation of a spectrum
+that is the difference between the spectrum and the polynomial fit. Use the <b>As a ceiling</b> option for
+absorption lines, and <b>As base line</b> for emission lines. These subtracted spectra appear on the global
+list and are added to the plot for display.
+<!--l. 2526--><p class="noindent" >The <b>Divide spectrum by fit</b> checkbox allows you to ask for the creation of a new spectrum that is the
+result of dividing the spectrum by the polynomial fit. You will probably want to do this before
+attempting to fit absorption lines so that the continuum is normalized. The new spectrum appears on
+the global list (with the name <code>Ratio: &#x003C;spectrum name&#x003E; by &#x003C;polynomial name&#x003E;</code> and can plotted in a
+new window before fitting the lines.
+<!--l. 2534--><p class="noindent" ><b>Coordinate ranges</b>
+     <div class="quote">
+     <!--l. 2536--><p class="noindent" >This part of the window is used to define the regions of the spectra that you want
+     to fit the polynomial to.
+     <!--l. 2539--><p class="noindent" >To add a region press the <b>Add</b> button and then drag out a region in the display area
+     of the plot window. This should result in the creation of a green rectangular figure.
+     <!--l. 2543--><p class="noindent" >You can interact with the figure, moving it side-to-side and resizing it. To do this
+     point at the figure and press the left mouse button. This &#x2018;selects&#x2019; the figure and adds
+                                                                                       
+                                                                                       
+     <code>grips</code> to its exterior. Note that it also becomes the selected row in the <b>Coordinate
+     ranges:</b> table. To move the figure just drag it and to resize it drag a grip (the little
+     black  squares).  The  associated  coordinate  range  in  the  table  updates  with  these
+     changes.
+     <!--l. 2551--><p class="noindent" >To add a second range just press <b>Add</b> and repeat. The ranges can be overlapped or
+     not.
+     <!--l. 2554--><p class="noindent" >To fine tune the ranges you can edit the values in the ranges table, just point at the
+     cell you want to change and double click the left mouse button. This should enable
+     the text editing cursor. Just make the modifications you want and press <code>&#x003C;Return&#x003E;</code>
+     to make the changes permanent. (Note: if your spectra have sky coordinates shown
+     for the X axis, then you should use the same format for your edits).
+     <!--l. 2561--><p class="noindent" >To read a set of ranges from a disk file choose the <b>File-&#x003E;Read ranges</b> menu item. The
+     format of the input file is simple. It should have two fields separated by whitespace
+     or  commas.  Comments  are  indicated  by  lines  starting  with  a  hash  (#)  and  are
+     ignored. You can also save the ranges to disk (<b>File-&#x003E;Save ranges</b>).
+     <!--l. 2568--><p class="noindent" >When you&#x2019;ve got the ranges that you want to fit, press the <b>Fit</b> button. This creates
+     a new spectrum on the global list, called <code>Polynomial Fit: &#x003C;n&#x003E;</code> and displays it in
+     the plot. You can save this to disk, or display in another plot <em>etc.</em>, just like any other
+     spectrum. To just fit one or a subset of the ranges select the rows and then press the
+     <b>Fit selected</b> button.
+     <!--l. 2576--><p class="noindent" >To clear any fits created by this window press the <b>Delete fits</b> button. To clear the
+     ranges from the display area and delete the fits press the <b>Reset</b> button. To keep any
+     fits just close the window.</div>
+<!--l. 2582--><p class="noindent" ><b>Fit status</b>
+     <div class="quote">
+     <!--l. 2584--><p class="noindent" >The <b>Fit status</b> text area shows some facts and figures about the fitting process. The
+     <code>RMS</code> value is the root mean square difference between the fit and the spectra data <em>i.e.</em>:
+<div class="math-display"><!--l. 2587--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+                             <msqrt><mrow>
+<mfrac><mrow 
+><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>&#x2211;</mo></mrow><mrow 
+><mi 
+>i</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>N</mi></mrow></munderover 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">&#x2212;</mo><msub><mrow 
+><mi 
+>f</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-bin">&#x2217;</mo> <mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">&#x2212;</mo><msub><mrow 
+><mi 
+>f</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow>
+                 <mrow 
+><mi 
+>N</mi></mrow></mfrac></mrow></msqrt>
+</mrow></math></div>
+     <!--l. 2591--><p class="nopar" > Where <!--l. 2592--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></math>
+     and <!--l. 2592--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>f</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></math>
+     are the data values of the spectrum and the fit (possibly interchanged) and <!--l. 2593--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>N</mi></math>
+     the number of positions in the spectrum.</div>
+                                                                                       
+                                                                                       
+<!--l. 2597--><p class="noindent" ><b>Command Buttons</b>
+     <ul class="itemize1">
+     <li class="itemize"><b>Fit</b> Performs a fit on all the regions you&#x2019;ve defined and displays the fit and any subtracted
+     or divided spectra in the plot.
+     </li>
+     <li class="itemize"><b>Fit (Replace)</b> Same as <b>Fit</b>, except that if you&#x2019;ve opted to subtract or divide the fit into
+     the  displayed  spectrum,  then  that  spectrum  will  be  removed  and  you&#x2019;ll  only  see  the
+     subtracted  and/or  divided  result.  If  you  haven&#x2019;t  opted  to  subtract  or  divide  then  the
+     results are exactly the same as for <b>Fit</b>.
+     </li>
+     <li class="itemize"><b>Fit selected</b> Performs a fit on only the currently selected regions. The results are displayed
+     in the way as the <b>Fit</b> command.
+     </li>
+     <li class="itemize"><b>Fit selected (Replace)</b> Same as <b>Fit (Replace)</b>, except only the selected regions are used for
+     fitting.
+     </li>
+     <li class="itemize"><b>Reset</b>  Removes  all  fit  spectra  (from  the  plot  and  global  list)  and  erases  the  ranges.
+     The  polynomial  degree  is  set  to  the  default  (which  will  be  the  last  value  used  in  any
+     polynomial toolbox).
+     </li>
+     <li class="itemize"><b>Reset  (Replace)</b>  Also  removes  all  fit  spectra,  but  keeps  the  ranges  and  replaces  the
+     spectrum first removed by a <b>Fit (Replace)</b>. Effectively undoes a <b>Fit (Replace)</b>.
+     </li></ul>
+<!--l. 2626--><p class="noindent" ><b>Accelerator keys</b>
+     <ul class="itemize1">
+     <li class="itemize"><b>Control-f</b> Do fit to all ranges.
+     </li>
+     <li class="itemize"><b>Control-l</b> Do fit to all ranges, only display any new spectra.
+     </li>
+     <li class="itemize"><b>Control-s</b> Do fit to selected ranges.
+     </li>
+     <li class="itemize"><b>Control-t</b> Do fit to selected ranges, only display any new spectra.
+     </li>
+     <li class="itemize"><b>Control-p</b> Reset interface after a fit replace.
+     </li>
+     <li class="itemize"><b>Control-r</b> Reset interface clearing all ranges and new spectra.
+     </li>
+     <li class="itemize"><b>Control-i</b> Delete any new spectra (fits and corrected spectra).
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize"><b>Control-d</b> Add a coordinate range (interactive or non-interactive).
+     </li>
+     <li class="itemize"><b>Control-e</b> Delete the selected coordinate ranges.
+     </li>
+     <li class="itemize"><b>Control-w</b> Close the window.
+     </li>
+     <li class="itemize"><b>F1</b> Display help on <span class="sf">SPLAT-VO </span>.
+     </li>
+     <li class="itemize"><b>Shift-F1</b> Display help on window.</li></ul>
+<!--l. 2646--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<!--l. 2647--><p class="noindent" ><a 
+ id="tailsun243su19.html"></a> 
+</body> 
+</html>

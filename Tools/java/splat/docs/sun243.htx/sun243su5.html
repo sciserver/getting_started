@@ -1,0 +1,711 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>A plot window</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+
+<h4 class="subsectionHead"><span class="titlemark">3.2    </span> <a 
+ id="x11-100002"></a>A plot window<a name="xref_plot_window"></a></h4>
+<!--l. 660--><p class="noindent" >The anatomy of a plot window is shown below:
+<div class="center">
+<img 
+src="plot2.gif" alt="PIC"  
+> </div>
+<!--l. 664--><p class="noindent" >It has three main regions, the menubar &#x0026; toolbar, the control panel and the display area.<br 
+class="newline" />
+<!--l. 667--><p class="noindent" ><b>The display area</b>
+     <div class="quote">
+     <!--l. 669--><p class="noindent" >The display area shows a view of all the spectra that are currently associated with
+     this plot. The colours, plotting style <em>etc.</em>&#x00A0;of these spectra are determined by their
+     global properties as set in the main browser window.
+     <!--l. 674--><p class="noindent" >The  plot  title  and  axis  labels  are  determined  using  the  properties  of  the  current
+     spectrum,  if  possible.  For  instance  if  the  current  spectrum  is  an  NDF  then  these
+     values are determined from the NDF&#x2019;s title, units and axis components, or for more
+     recent  NDFs  from  the  properties  of  its  WCS  component.  Similarly  for  FITS  files
+     these values are determined using the world coordinates FITS keywords. To change
+     these look in the <b>Configure Plot Options</b> window, which is activated by pressing
+     the <img 
+src="config.gif" alt="PIC"  
+>  button.
+     <!--l. 683--><p class="noindent" >The  size  of  the  area  used  to  display  a  spectrum  is  initially  determined  from  an
+     automatic  match  of  its  data  and  coordinate  extents  to  the  visible  surface  of  the
+     display area, you can change the size of the display surface using the zoom controls
+     described below and/or you can change the actual data limits using the <b>Configure
+     Plot Options</b> window. When you add or remove a spectrum the apparent size of
+     the display region stays the same and all the spectra now displayed are scaled to fit
+     within it. To return to a state where the visible surface matches the display area you
+     need to press the <img 
+src="fitwidth.gif" alt="PIC"  
+>  and <img 
+src="fitheight.gif" alt="PIC"  
+>  buttons.
+     <!--l. 693--><p class="noindent" >The <b>Configure Plot Options</b> window also offers the ability change the colour of the
+     display area background, to draw the lines using anti-aliasing (which reduces the
+     jagged effects, but at the cost of drawing speed), to modify the reserved area around
+     the plot and do things like position the numeric labels, set the axis gaps <em>etc.</em>&#x00A0;
+                                                                                       
+                                                                                       
+     <!--l. 699--><p class="noindent" >The following interactions are provided in the display area.
+     <ul class="itemize1">
+     <li class="itemize">Continuous coordinate and data readout: when you move the mouse pointer
+     over the display area the coordinates and data value of the nearest point of the
+     current spectrum are shown in the control panel. If the readout is not updating
+     you have probably moved outside of the extent of the current spectrum (the
+     one selected in the <b>Displaying:</b> control).
+     <!--l. 708--><p class="noindent" >If the vertical hair is enabled, then this also follows the mouse pointer.
+     </li>
+     <li class="itemize">Region Zoom: you can zoom on a feature by dragging a rectangle over it using
+     the middle mouse button.
+     </li>
+     <li class="itemize">Incremental Zoom: you can increase the zoom factors by one simply by pressing
+     the middle mouse button anywhere in the display area or pressing the <!--l. 716--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext  >_</mtext></mstyle><mo 
+class="MathClass-bin">/</mo> <mo 
+class="MathClass-rel">=</mo></math>
+     keys. If you hold down the shift key these zoom in Y, otherwise in X.
+     </li>
+     <li class="itemize">Scrollbars:  when  the  X  or  Y  zooms  make  the  plot  greater  in  size  than  the
+     display area scrollbars appear to the bottom and right. Just drag the sliders to
+     scroll.
+     </li>
+     <li class="itemize">Keyboard Scroll: the arrows keys can be made to control the scroll, provided
+     the keyboard focus is in the display area. Make sure of this by clicking the left
+     mouse button while pointed in the display area.
+     </li>
+     <li class="itemize">Interpolated data value: if the keyboard focus is in the display area and the
+     vertical hair is shown, then pressing the space bar will display the interpolated
+     position of the hair, rather than the X coordinate and data value of the nearest
+     position in the spectrum.
+     </li>
+     <li class="itemize">Interactive graphics control: if any interactive graphics figures are shown (such
+     as those that define ranges for fitting backgrounds and spectral lines, or are
+     produced by the controls in the <b>Graphics</b> menu), then these can be moved by
+     selecting them (just click on one and little grips appear around the edges) and
+     then dragging them and resized by dragging the edge grips.
+     </li>
+     <li class="itemize">Drop target: you can drop any spectra dragged from the global list and they
+     will be displayed.
+     </li></ul>
+     </div>
+<!--l. 747--><p class="noindent" ><b>The control panel</b>
+     <div class="quote">
+     <!--l. 749--><p class="noindent" >The control panel area provides controls for interacting with the plot. It also shows
+     details of what spectra are displayed in the plot and a continuous readout of the X
+     coordinate and corresponding data value.
+                                                                                       
+                                                                                       
+     <!--l. 754--><p class="noindent" >The <b>Displaying:</b> drop down list shows the names and current rendering properties
+     of any spectra that are displayed. If you choose a spectrum from this list it becomes
+     the  <b>current  spectrum</b>  and  is  used  as  the  basis  for  the  plot&#x2019;s  coordinates  (so  the
+     readouts now show the values of this spectrum, also the plot will be re-drawn if
+     the  coordinate  system  of  the  newly  selected  spectrum  is  different).  The  selected
+     spectrum also becomes selected in the browser window (so you see its details more
+     clearly and apply modifications). This spectrum is also the one used by any tools
+     (such  as  background  and  line  fitting)  that  work  with  only  one  spectrum.  If  you
+     remove this spectrum using the <b>Edit-&#x003E;Remove current spectrum</b> option then the
+     next spectrum in the list becomes the current one.
+     <!--l. 767--><p class="noindent" >The  <b>Y  limits  (%):</b>  drop  down  list  provides  a  series  of  quick  cuts  for  setting  the
+     limits of the Y axis. Normally this is the full range, but using a percentage cut can
+     usefully clip the range to reject extreme outlier data values. The data values used
+     are restricted to the limits of then X coordinates (all when automatic ranging is used,
+     the default ).
+     <!--l. 774--><p class="noindent" >The <b>Wavelength:</b> entry control has two functions. The first is to show the current
+     wavelength.  The  second  is  to  allow  you  to  centre  the  display  area  on  a  specific
+     coordinate. Just type in the value you want to see here and press <code>&#x003C;Return&#x003E;</code>. Note
+     that the label of this area modifies to match the label of the X axis, so could say
+     something different to <b>Wavelength:</b>.
+     <!--l. 781--><p class="noindent" >The <b>:V-hair</b> checkbox controls whether the &#x2018;vertical hair&#x2019; is shown. The vertical hair
+     is just a vertical line that follows the mouse pointer around the display area. It can
+     be quite slow, so isn&#x2019;t shown by default.
+     <!--l. 786--><p class="noindent" >The <b>X scale:</b> and <b>Y scale:</b> controls change the zoom of the display area. The plus
+     and minus controls increase and decrease the zoom by one, or you can choose a
+     zoom from the drop-down lists, or you can type in a decimal value (which should
+     be greater than equal to one) and press <code>&#x003C;Return&#x003E;</code>.
+     <!--l. 792--><p class="noindent" >The <b>:log</b> controls determine if either of the axes are drawing using log spacing (this
+     is not possible if either axis spans the value zero. In this case, the user is notified
+     and asked if a copy of the plot with such values removed should be created). Finer
+     control of the log spacing and labelling can be obtained using the plot configuration
+     window. If there are values
+     <!--l. 798--><p class="noindent" >The  <b>Track  free</b>  checkbox  determines  what  values  are  shown  in  the  continuous
+     coordinate  readouts.  When  unchecked  (the  default)  the  values  shown  are  the
+     nearest  ones  of  the  current  spectrum  to  the  pointer  position.  When  checked  the
+     readouts show the coordinates under the pointer.
+     </div>
+<!--l. 805--><p class="noindent" ><b>Toolbar and menus</b>
+     <div class="quote">
+     <!--l. 807--><p class="noindent" >The  toolbar  region  has  a  series  of  buttons  that  act  as  short-cuts  to  most  of  the
+     functions  found  in  the  main  menus.  Some  of  these  create  new  windows  with
+     complex actions that should be consulted for further help.
+                                                                                       
+                                                                                       
+     <ul class="itemize1">
+     <li class="itemize"><img 
+src="splatlogo.gif" alt="PIC"  
+>  Bring the main browser window to front. This can be useful if there are
+     too many open plots, and the browser window is difficult to find.
+     </li>
+     <li class="itemize"><img 
+src="print.gif" alt="PIC"  
+>   Print a copy of the display area to an installed printer or to a file. The
+     output produced fits the output page format using the current aspect ratio of
+     the display area, so if you&#x2019;re zoomed by a large factor then you&#x2019;ll get an output
+     page that has a very small height. If you want a printout of just the visible part
+     then cut it out and display it in a new plot first. Postscript output from this
+     dialogue isn&#x2019;t encapsulated. The next figure is an example of this output. Note
+     that if you&#x2019;re looking at a paper copy of this document you&#x2019;re looking at the
+     postscript output and if you&#x2019;re looking at the on-line help it shows a scaled
+     JPEG for on-line copies (see item after next).
+        <div class="quote">
+        <!--l. 828--><p class="noindent" ><img 
+src="printoutput.gif" alt="PIC"  
+></div>
+     </li>
+     <li class="itemize"><img 
+src="postscriptprint.gif" alt="PIC"  
+>  Same as the print option, except, this only offers to write a postscript file and
+     doesn&#x2019;t rely on having any printers installed on the local machine. The output can be
+     in encapsulated form for inclusion in other documents.
+     </li>
+     <li class="itemize"><img 
+src="jpegpng.gif" alt="PIC"  
+>  Make a JPEG or PNG image version of the display area. Again the file produced
+     fits the output graphic using the current aspect ratio of the display area. The default is
+     to produce an image with a pixel-to-pixel correspondence to what you see on the
+     screen (if it were possible to view the whole of the area). Alternatively you can
+     scale the graphic to fit some dimensions that you enter, or just clip the
+     graphic to these dimensions. (Hint: if you want anti-aliased lines drawn
+     in the image select this plotting option first using the plot configuration
+     window).
+     </li>
+     <li class="itemize"><img 
+src="fitwidth.gif" alt="PIC"  
+>  Make spectra fit the display area width. Use this to quickly return to an
+     unzoomed coordinate state and to match the X axis width when you resize the plot
+     window.
+     </li>
+     <li class="itemize"><img 
+src="fitheight.gif" alt="PIC"  
+>  Make spectra fit the display area height. Use this to quickly return to an
+     unzoomed data value state and to match the Y axis height when you resize the plot
+     window.
+     </li>
+     <li class="itemize"><img 
+src="panner.gif" alt="PIC"  
+>  Show the &#x2018;panner&#x2019; window. You can use this to see a view of the
+     whole extent of the currently displayed spectra (shown at the same aspect
+     ratio as the display area). This also features a red rectangle that shows the
+     extent of the display area, this can be moved to change the display area
+     view.
+     </li>
+     <li class="itemize"><img 
+src="config.gif" alt="PIC"  
+>  Show the plot configuration window. This contains many controls for setting the
+     display area data limits, changing the plot title and axis labels, drawing grid lines,
+                                                                                       
+                                                                                       
+     defining how many ticks to display, changing the amount of space around the plot
+     edges, setting the background colour and whether to draw text or text and lines
+     using anti-aliasing. It also offers facilities to save these settings for future
+     restoration.
+     </li>
+     <li class="itemize"><img 
+src="cutter.gif" alt="PIC"  
+>  Create a new spectrum (on the global list) that contains only the visible parts of
+     the current spectrum. You can then display this new spectrum in this or a new plot.
+     The new spectrum is given the name <code>Cut &#x003C;n&#x003E; of &#x003C;current_shortname&#x003E;</code>. This facility
+     is useful to create printouts of just parts of a spectrum and to speed up processing of
+     very large spectra.
+     </li>
+     <li class="itemize"><img 
+src="regioncutter.gif" alt="PIC"  
+>  Show the region cutter window. This window allows you to graphically define
+     which regions you&#x2019;d like to cut, delete or replace by linear interpolation in the current
+     spectrum.
+     </li>
+     <li class="itemize"><img 
+src="fitback.gif" alt="PIC"  
+>  Show the toolbox for fitting a polynomial to defined regions of the current
+     spectrum. This is used to define backgrounds prior to line fitting, or for subtracting
+     and dividing backgrounds from spectra.
+     </li>
+     <li class="itemize"><img 
+src="interpolate.gif" alt="PIC"  
+>  Show the toolbox for taking an interpolated curve (<em>i.e.</em>&#x00A0;a spline drawn on the plot
+     using the features of the <b>Graphics</b> menu) and creating a spectrum from
+     it.
+     </li>
+     <li class="itemize"><img 
+src="fitline.gif" alt="PIC"  
+>  Show the toolbox for fitting emission and absorption lines. This measures the
+     line position and equivalent width as well as fitting Gaussian, Lorentzian and Voigt
+     profiles to selected wavelength ranges of the current spectrum. Remember to define a
+     polynomial background before using this tool or have your data processed for
+     fitting.
+     </li>
+     <li class="itemize"><img 
+src="filter.gif" alt="PIC"  
+>  Show the toolbox for filtering the current spectrum. The filters offered are simple
+     ones like the average and median over a windowed area, plus more complex ones like
+     smoothing using any of the known line shapes and denoising using wavelet
+     transformations.
+     </li>
+     <li class="itemize"><img 
+src="units.gif" alt="PIC"  
+>  Show the toolbox for selecting new coordinates or data units for the current
+     spectrum (and therefore plot).
+     </li>
+     <li class="itemize"><img 
+src="flip.gif" alt="PIC"  
+>  Show the toolbox for flipping, shifting or redshifting editable spectra
+     shown in the plot. Also allows you create an editable copy of the current
+     spectrum.
+     </li>
+     <li class="itemize"><img 
+src="sigma.gif" alt="PIC"  
+>  Show the toolbox for determining statistics (mean, standard deviation, <em>etc.</em>) of the
+     whole or parts of the current spectrum.
+     </li>
+     <li class="itemize"><img 
+src="stacker.gif" alt="PIC"  
+>  Show the toolbox for applying offsets to the displayed spectra so they
+                                                                                       
+                                                                                       
+     can be viewed more easily or shown in some order, for instance time of
+     observation.
+     </li>
+     <li class="itemize"><img 
+src="speclines.gif" alt="PIC"  
+>  Shows the <span class="sf">SPLAT-VO </span>&#x00A0;Line Browser window, which allows to search for spectral
+     lines using the VO (SLAP) and VAMDC, and display chosen lines into the
+     spectrum.
+     </li></ul>
+     <!--l. 918--><p class="noindent" >The <b>Options</b> menu contains several control items whose values are preserved between
+     invocations of <span class="sf">SPLAT-VO </span>.
+     <ul class="itemize1">
+     <li class="itemize"><b>Options-&#x003E;Match coordinates and/or fluxes</b>. When this is selected the plot will
+     attempt to convert the spectral coordinates and fluxes of all displayed spectra
+     into the systems of the current spectrum, so that they will be aligned when
+     displayed.
+     <!--l. 928--><p class="noindent" >Whether this works or not depends on whether the spectra that you have read
+     in contain correct descriptions (or descriptions that <span class="sf">SPLAT-VO </span>&#x00A0;can make good
+     guesses  about)  of  the  spectral  coordinates  and  data  fluxes  and  whether  the
+     flux  system  is  supported.  If  this  doesn&#x2019;t  work  then  check  that  your  spectra
+     have valid descriptions using the toolboxes in the main browser window for
+     inspecting and setting spectral coordinates and data units (<img 
+src="xunits.gif" alt="PIC"  
+>  and <img 
+src="yunits.gif" alt="PIC"  
+> ).
+     <!--l. 936--><p class="noindent" >In the case of line identifier catalogues, these will also be transformed to the
+     rest frame of the observed source (<em>i.e.</em>&#x00A0;they will be red or blue shifted if you
+     have defined the source velocity as part of its coordinate system definition).
+     <!--l. 941--><p class="noindent" >This  option  is  switched  on  by  default.  If  your  spectra  do  not  need  aligning
+     switch if off for extra performance.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Match non-flux data units</b>. If your data units are not understood
+     as  fluxes  it  may  still  be  possible  to  align  them  (dimensionally  obvious  unit
+     conversions are possible for instance mK and K will be aligned correctly, as
+     will eV and keV).
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Match sidebands</b> If your spectra are dual sideband then they can be
+     aligned taking this into account, or they can be aligned just using the currently
+     selected sidebands. By default they are not aligned by taking the sideband into
+     account. If you want to do otherwise select this item.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Match  origins</b>  If  you  have  defined  origins  for  your  spectra  to
+     display offset coordinate systems then selecting this will align the spectra in
+     those coordinates not the absolute ones.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Match  using  base  system</b>  When  matching  spectra  it  is  usual  to
+     achieve this by transforming all coordinate systems into a common system,
+     this system is wavelength by default. For some systems it may be better to use
+     another common system so by selecting this option you can set the common
+     system  used  to  be  that  of  the  current  spectrum.  This  option  is  most  useful
+                                                                                       
+                                                                                       
+     when working with velocities, when you want the alignment to happen in that
+     system (because the spectra have different rest frequencies).
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Only display grid axes in visible area</b> Normally the labelled axes
+     displaying the spectral and data coordinates are drawn to the full size of the
+     display surface of the plot. This is the quickest mode as it reduces the need for
+     re-drawing. If you select this option the axes will be only drawn within the the
+     visible part of the plot, which makes it easier to see the coordinate labels, but
+     means that the axes need to be re-drawn continually when scrolling.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Only display spectra within axes</b> Select this option if you only want
+     spectra (including line identifiers) to be drawn within the bounds of the axes.
+     When combined with the previous option to only display axes in the visible
+     area this will potentially slow down scroll operations a lot, so the default is off.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Line  identifiers-&#x003E;Line  Browser</b>  This  option  opens  the  <span class="sf">SPLAT-VO
+     </span>&#x00A0;Line Browser window, which allows to search for spectral lines using the VO
+     (SLAP) and VAMDC.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Line  identifiers-&#x003E;Load  all  matching  line  identifiers</b>  If  you  select
+     this option then all line identifiers known to <span class="sf">SPLAT-VO </span>&#x00A0;(including any that
+     you have opened yourself), and whose coordinate ranges fall within that of the
+     plot, will be loaded into the global list and displayed in the plot. Note that this
+     will not work if the spectra displayed in the plot do not have defined spectral
+     coordinates.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Line identifiers-&#x003E;Load all matching pre-loaded line identifiers</b> If
+     you select this option then all line identifiers already loaded into the global list,
+     and whose coordinate ranges fall within that of the plot, will be displayed in
+     the plot. Note that this will not work if the spectra displayed in the plot do not
+     have defined spectral coordinates.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Line identifiers-&#x003E;Positions track current spectrum</b> If you select this
+     option then line identifiers that do not have data positions (this is typically
+     true) will be positioned above the current spectrum, rather than displayed in a
+     line along the bottom of the plot.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Line identifiers-&#x003E;Prefix name to labels</b> If you select this item then
+     the short name of each line identifier spectrum displayed in the plot will be
+     prefixed to the label. This allows you to discriminate between crowded labels.
+     Note  that  the  short  name  of  a  line  identifier  can  be  modified  in  the  main
+     window, once it is loaded into the global list. For legibility any names that are
+     appended by <b>_lines</b>, will have that string removed and any underscores will
+     be replaced by spaces.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Line identifiers-&#x003E;Draw horizontal labels</b> Select this option if you
+                                                                                       
+                                                                                       
+     want line identifier labels drawn horizontally rather than vertically.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Line identifiers-&#x003E;Show dual sideband labels</b> Select this option if
+     you want line identifier labels drawn for both sidebands of a dual sideband
+     spectrum. The non-default sideband coordinates are displayed along the top
+     edge of the plot and the matching labels will be displayed in red, with either
+     <b>(USB)</b> or <b>(LSB)</b> postfixed to the label to avoid confusion.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Error  bar  auto-ranging</b>.  When  auto-ranging  a  spectrum  that  has
+     associated errors the limits do not include the extent of any error bars that will
+     be drawn, if you want this to be otherwise select this option.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Draw errors as spectrum</b>. If this option is selected and any of the
+     displayed spectra have errors, then those spectra with errors will be drawn
+     using the error value as each point on the line rather than the data values (and
+     conversely the data values will be used to draw error bars, if that is enabled
+     for any of the spectra). When displaying spectra without any errors this option
+     has no effect.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Auto-fit percentiles in Y</b>. When this option is selected choosing a
+     percentile limit in Y results in the plot also being forced to fit the height of the
+     plot.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Short names in menu lists</b>. When this option is deselected the long
+     names (usually file names) are shown in the drop-down menu.
+     </li>
+     <li class="itemize"><b>Options-&#x003E;Display  synopsis</b>.  When  this  option  is  selected  a  description  of
+     various properties of the current spectrum is displayed overlaid on the plot.
+     The description can be moved around by dragging.
+     <!--l. 1049--><p class="noindent" >The items possibly included in the synopsis are:
+        <div class="quote">
+    <dl class="description"><dt class="description">
+Name: </dt><dd 
+class="description">the short name.
+    </dd><dt class="description">
+Telescope: </dt><dd 
+class="description">the telescope, instrument and it&#x2019;s backend (TELESCOP/
+    INSTRUME/ BACKEND).
+    </dd><dt class="description">
+Object: </dt><dd 
+class="description">The target, molecule and molecular transition being observed
+    (OBJECT/ MOLECULE/ TRANSITI).
+    </dd><dt class="description">
+Date obs: </dt><dd 
+class="description">The date of the observation (DATE<!--l. 1055--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">&#x2212;</mo></math>OBS
+    or Epoch in UTC).
+    </dd><dt class="description">
+Elevation: </dt><dd 
+class="description">The observatory elevation (ELSTART or <!--l. 1056--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mi 
+>.</mi><mn>5</mn><mo 
+class="MathClass-bin">&#x2217;</mo></math>(ELSTART<!--l. 1056--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">+</mo></math>ELEND)).
+                                                                                       
+                                                                                       
+    </dd><dt class="description">
+Exposure: </dt><dd 
+class="description">Exposure time for the spectrum (EXTIME).
+    </dd><dt class="description">
+&#x00A0;or </dt><dd 
+class="description">
+    </dd><dt class="description">
+Exposure (median): </dt><dd 
+class="description">Exposure time for the spectrum (EXP_TIME).
+    </dd><dt class="description">
+&#x00A0;or </dt><dd 
+class="description">
+    </dd><dt class="description">
+Exposure (elapsed): </dt><dd 
+class="description">The  time  elapsed  during  exposure  (INT_TIME
+    otherwise DATE-END<!--l. 1061--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">&#x2212;</mo></math>DATE-OBS).
+    </dd><dt class="description">
+Exposure (effective): </dt><dd 
+class="description">Effective exposure time (EXEFFT).
+    </dd><dt class="description">
+Coord sys: </dt><dd 
+class="description">The coordinate system code (System).
+    </dd><dt class="description">
+Spec position: </dt><dd 
+class="description">The   position   of   spectrum   on   the   sky   (EXRAX,
+    EXDECX).
+    </dd><dt class="description">
+Src position: </dt><dd 
+class="description">The   position   of   the   observation   centre   (EXRRA,
+    EXRDEC).
+    </dd><dt class="description">
+&#x00A0;or </dt><dd 
+class="description">
+    </dd><dt class="description">
+Img centre: </dt><dd 
+class="description">The centre of the originating image (EXRA, EXDEC).
+    </dd><dt class="description">
+Offset: </dt><dd 
+class="description">The  offset  of  spectrum  from  observation  centre  (EXRRAOF,
+    EXRDECOF or EXRAOF, EXDECOF).
+    </dd><dt class="description">
+Doppler RA, Dec: </dt><dd 
+class="description">The reference position (RefRA,RefDec).
+    </dd><dt class="description">
+SourceVel: </dt><dd 
+class="description">The source velocity (SourceVel).
+    </dd><dt class="description">
+SourceVRF: </dt><dd 
+class="description">The source velocity reference frame (SourceVRF).
+    </dd><dt class="description">
+SourceSys: </dt><dd 
+class="description">The system of the source velocity (SourceSys).
+    </dd><dt class="description">
+StdOfRest: </dt><dd 
+class="description">The standard of rest (StdOfRest).
+    </dd><dt class="description">
+RestFreq: </dt><dd 
+class="description">The rest frequency (RestFreq).
+    </dd><dt class="description">
+ImagFreq: </dt><dd 
+class="description">The  image  sideband  equivalent  of  the  rest  frequency
+    (ImagFreq).
+    </dd><dt class="description">
+Channel spacing: </dt><dd 
+class="description">The channel spacing (derived value).
+                                                                                       
+                                                                                       
+    </dd><dt class="description">
+Number of channels: </dt><dd 
+class="description">Number of coordinate positions.
+    </dd><dt class="description">
+TSYS: </dt><dd 
+class="description">System temperature (TSYS).
+    </dd><dt class="description">
+&#x00A0;or </dt><dd 
+class="description">
+    </dd><dt class="description">
+TSYS (median): </dt><dd 
+class="description">Median system temperature (MEDTSYS).
+    </dd><dt class="description">
+TSYS (est): </dt><dd 
+class="description">System temperature (derived value, see region statistics
+    window).
+    </dd><dt class="description">
+TRX: </dt><dd 
+class="description">Receiver temperature (TRX).</dd></dl>
+        </div>
+     <!--l. 1087--><p class="noindent" >These are somewhat tuned for submillimetre observations at the JAC and for spectra
+     extracted by GAIA from cubes, so many may be missing for spectra from other
+     sources. Names in parenthesis are either the FITS keywords or AST attributes used to
+     obtain the values.
+     </li></ul>
+     </div>
+<!--l. 1095--><p class="noindent" ><b>The Graphics menu</b>
+<!--l. 1097--><p class="noindent" >The <b>Graphics</b> menu provides methods for drawing text and a range of figures on the plot. This allows
+you to add annotations, but also provides the basis for the interactive graphics used by the various
+toolboxes.
+<!--l. 1101--><p class="noindent" >To draw a figure on a plot you need to select an option from the <b>Drawing mode</b> sub-menu
+and then, depending on the figure type, either drag out a region or select fiducial points.
+When creating a figure using points these are completed using a double click on the last
+point.
+<!--l. 1106--><p class="noindent" >In the <b>Drawing mode</b> menu the currently available figure types are:
+     <div class="quote">
+     <ul class="itemize1">
+     <li class="itemize"><img 
+src="line.gif" alt="PIC"  
+>  a straight line,
+     </li>
+     <li class="itemize"><img 
+src="rectangle.gif" alt="PIC"  
+>  a rectangle,
+     </li>
+     <li class="itemize"><img 
+src="ellipse.gif" alt="PIC"  
+>  an ellipse,
+     </li>
+     <li class="itemize"><img 
+src="polyline.gif" alt="PIC"  
+>  a poly line (last point not connected to first),
+     </li>
+     <li class="itemize"><img 
+src="polygon.gif" alt="PIC"  
+>  a polygon (last point connected to first),
+     </li>
+     <li class="itemize"><img 
+src="freehand.gif" alt="PIC"  
+>  freehand curve,
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize"><img 
+src="text.gif" alt="PIC"  
+>  a text string,
+     </li>
+     <li class="itemize"><img 
+src="curve.gif" alt="PIC"  
+>  an interpolated curve (splines and special spectral shapes),
+     </li>
+     <li class="itemize"><img 
+src="xrange.gif" alt="PIC"  
+>  a rectangle which only moves along X (indicates a range of coordinates).</li></ul>
+     </div>
+<!--l. 1123--><p class="noindent" >There are also two special modes:
+     <div class="quote">
+     <ul class="itemize1">
+     <li class="itemize"><img 
+src="select.gif" alt="PIC"  
+>  select figure,
+     </li>
+     <li class="itemize"><img 
+src="edit.gif" alt="PIC"  
+>  edit figure.</li></ul>
+     </div>
+<!--l. 1130--><p class="noindent" >When the mode is select (this is usually the default state), clicking on a figure selects it. You can then
+drag it around to move it, or drag one of the grips (the little squares) to change the shape. To select
+more than one figure you hold down the <code>&#x003C;Shift&#x003E;</code> while clicking.
+<!--l. 1135--><p class="noindent" >The edit mode can be used to add new points to a polyline, polygon or interpolated curve. Just select
+this, click on the figure you want to edit and then start adding new points. You can also edit text
+strings, just choose the edit mode and click on the text, this produces a dialogue with the text for
+editing.
+<!--l. 1141--><p class="noindent" >To change the properties of a figure (line width, fill/outline colour, font <em>etc.</em>) just select the figure and
+then choose the option you want to change from the various menus. You can define these before
+creating a figure too.
+<!--l. 1145--><p class="noindent" >Interpolated curves are like polylines in that they are defined by a series of points, but they can only
+have increasing or decreasing X coordinates (so cannot double back on themselves). They are intended
+for drawing figures that are related to spectra, specifically spectral backgrounds and lines. In fact if
+you draw an interpolated curve you can convert it into a spectrum for removing from a real spectrum
+using the <b>Generate spectra from interpolated lines</b> toolbox. The types of interpolation scheme
+available are:
+     <div class="quote">
+     <ul class="itemize1">
+     <li class="itemize">Hermite, interpolation based on Hermite polynomials. The effect is supposed
+     to construct reasonable analytic curves through discrete data points (<em>i.e.</em>&#x00A0;like
+     those a human would produce).
+     </li>
+     <li class="itemize">Akima, interpolation based on Akima splines. Like Hermite this supposed to
+     construct human-like analytic curves.
+     </li>
+     <li class="itemize">Cubic, interpolation using natural cubic splines.
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize">Polynomial, interpolation using a simple polynomial of order one less than the
+     current number of points.
+     </li>
+     <li class="itemize">Linear, interpolation using straight-lines (like polyline, except it has sorted X
+     coordinates).
+     </li>
+     <li class="itemize">Gaussian, interpolation using a Gaussian line-profile. This can only have four
+     reference positions (and is initialised from the first two indicated on the plot),
+     these define the left extent, width, height/centre and right extent. The order
+     will switch if these are dragged past each other (so dragging the width grip
+     beyond the left extent grip will switch their meaning).
+     </li>
+     <li class="itemize">Lorentz, interpolation using a Lorentzian line-profile. Works like the Gaussian
+     curve.
+     </li>
+     <li class="itemize">Voigt, interpolation using a Voigt line-profile. This also works like the Gaussian
+     curve,  but  has  five  characteristic  positions,  left  extent,  Gaussian  width,
+     height/centre, Lorentzian width, right extent.
+     </li></ul>
+     </div>
+<!--l. 1187--><p class="noindent" >Once you have created your figures you may want to save them for restoration at a later time, this can
+be done using the <b>Graphics-&#x003E;Save/restore figures</b> dialogue. Figures are saved using the physical
+coordinates of the spectrum, so should be re-drawn at the correct wavelengths <em>etc.</em>&#x00A0;on new
+plots.
+<!--l. 1193--><p class="noindent" ><b>Accelerator keys</b>
+     <ul class="itemize1">
+     <li class="itemize"><b>Control-p</b> Activate print to printer dialog.
+     </li>
+     <li class="itemize"><b>Control-t</b> Activate print to postscript file dialog.
+     </li>
+     <li class="itemize"><b>Control-j</b> Activate print to JPEG file dialog.
+     </li>
+     <li class="itemize"><b>Control-b</b> Scale spectrum to fit visible width.
+     </li>
+     <li class="itemize"><b>Control-h</b> Scale spectrum to fit visible height.
+     </li>
+     <li class="itemize"><b>Control-a</b> Show the panner window.
+     </li>
+     <li class="itemize"><b>Control-o</b> Show the plot configuration window.
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize"><b>Control-w</b> Close the window.
+     </li>
+     <li class="itemize"><b>Control-v</b> Cut out the current view of the spectrum.
+     </li>
+     <li class="itemize"><b>Control-r</b> Activate cut out regions of spectrum window.
+     </li>
+     <li class="itemize"><b>Control-y</b> Activate fit polynomial to background window.
+     </li>
+     <li class="itemize"><b>Control-g</b> Activate generate spectrum from drawn curve window.
+     </li>
+     <li class="itemize"><b>Control-l</b> Activate fit spectral lines window.
+     </li>
+     <li class="itemize"><b>Control-f</b> Activate filter spectrum window.
+     </li>
+     <li class="itemize"><b>Control-u</b> Activate quick change units window.
+     </li>
+     <li class="itemize"><b>Control-l</b> Activate flip compare window.
+     </li>
+     <li class="itemize"><b>Control-s</b> Activate statistics window.
+     </li>
+     <li class="itemize"><b>Control-[1-9]</b> Select drawing mode for various graphics figures.
+     </li>
+     <li class="itemize"><b>Delete</b> Delete any selected graphics figures.
+     </li>
+     <li class="itemize"><b>Shift-Delete</b> Delete all graphics figures.
+     </li>
+     <li class="itemize"><b>r</b> Raise any selected graphics figures.
+     </li>
+     <li class="itemize"><b>l</b> Lower any selected graphics figures.
+     </li>
+     <li class="itemize"><b>h</b> Hide or unhide all graphics figures (toggle).
+     </li>
+     <li class="itemize"><b>F1</b> Display help on <span class="sf">SPLAT-VO </span>.
+     </li>
+     <li class="itemize"><b>Shift-F1</b> Display help on window.</li></ul>
+<!--l. 1225--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<!--l. 1226--><p class="noindent" ><a 
+ id="tailsun243su5.html"></a> 
+</body> 
+</html>

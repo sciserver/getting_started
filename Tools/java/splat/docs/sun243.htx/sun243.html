@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<title>SPLAT-VO &#x2013; A VO-enabled Spectral Analysis Tool</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+<div class="titlesection">
+<!--l. 106--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       <div class="flushright" 
+>
+<!--l. 106--><p class="noindent" >
+ <b>SUN/243.42</b></div>
+<!--l. 106--><p class="noindent" >Starlink Project<br 
+class="newline" />Starlink User Note&#x00A0;243.42<br 
+class="newline" />
+                                                                                       <div class="flushright" 
+>
+<!--l. 106--><p class="noindent" >
+<!--l. 106--><p class="noindent" >Peter W. Draper, Margarida Castro Neves &#x0026; Mark Taylor
+<!--l. 106--><p class="noindent" >1 Apr 2018
+<!--l. 106--><p class="noindent" >Copyright &#x00A9;&#x00A0;2001-2005 Council for the Central Laboratory of the Research Councils<br />
+Copyright &#x00A9;&#x00A0;2006-2007 Particle Physics and Astronomy Research Council<br />
+Copyright &#x00A9;&#x00A0;2007-2009 Science and Technology Facilities Council<br />
+Copyright &#x00A9;&#x00A0;2010-2017 Peter W. Draper<br />
+Copyright &#x00A9;&#x00A0;2013 German Astrophysical Virtual Observatory (GAVO)</div>
+<!--l. 106--><p class="noindent" ><HR> <div class="titleformat">
+<!--l. 106--><p class="noindent" ><span>SPLAT-VO &#x2013; A VO-enabled Spectral Analysis Tool</span>
+<!--l. 106--><p class="noindent" ><span>3.15</span>
+<!--l. 106--><p class="noindent" ><span>User&#x2019;s Manual</span> </div> <div class="center"> <HR> </div>
+<br 
+class="newline" />
+                                                                                       
+                                                                                       
+</div>
+<a 
+ id="Q1-1-1"></a>
+<h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Abstract</h3>
+<!--l. 106--><p class="noindent" ><a name="xref_abstract"></a> <span class="sf">SPLAT-VO</span> is an extensible analysis and display tool for extracted spectra that can also interact with
+the Virtual Observatory.  <a 
+ id="toc"></a>
+<a 
+ id="Q1-1-3"></a>
+<h3 class="likesectionHead"><a 
+ id="x1-2000"></a>Contents</h3>
+<div class="tableofcontents">
+<span class="sectionToc" >1 <a 
+href="sun243se1.html#x2-30001" id="QQ2-2-5">Overview</a></span>
+<br /><span class="sectionToc" >2 <a 
+href="sun243se2.html#x3-40002" id="QQ2-3-6">Getting started</a></span>
+<br />&#x00A0;<span class="subsectionToc" >2.1 <a 
+href="sun243se2.html#x3-50001" id="QQ2-3-7">Displaying a spectrum</a></span>
+<br />&#x00A0;<span class="subsectionToc" >2.2 <a 
+href="sun243se2.html#x3-60002" id="QQ2-3-8">Displaying more than one spectrum</a></span>
+<br />&#x00A0;<span class="subsectionToc" >2.3 <a 
+href="sun243se2.html#x3-70003" id="QQ2-3-9">Basic control of a plot view</a></span>
+<br /><span class="sectionToc" >3 <a 
+href="sun243se3.html#x4-80003" id="QQ2-4-10">Help for individual windows</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.1 <a 
+href="sun243se3.html#x4-90001" id="QQ2-4-11">The browser window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.2 <a 
+href="sun243se3.html#x4-100002" id="QQ2-4-12">A plot window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.3 <a 
+href="sun243se3.html#x4-110003" id="QQ2-4-13">The query VO for spectra window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.4 <a 
+href="sun243se3.html#x4-120004" id="QQ2-4-14">Query VO using ObsCore TAP</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.5 <a 
+href="sun243se3.html#x4-130005" id="QQ2-4-15">DataLink - more information about the data</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.6 <a 
+href="sun243se3.html#x4-140006" id="QQ2-4-16">Spectral lines query</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.7 <a 
+href="sun243se3.html#x4-150007" id="QQ2-4-17">The animation window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.8 <a 
+href="sun243se3.html#x4-160008" id="QQ2-4-18">The view and modify spectral values window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.9 <a 
+href="sun243se3.html#x4-170009" id="QQ2-4-19">The spectral coordinate system attributes window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.10 <a 
+href="sun243se3.html#x4-1800010" id="QQ2-4-20">The data units window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.11 <a 
+href="sun243se3.html#x4-1900011" id="QQ2-4-21">The simple binary maths window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.12 <a 
+href="sun243se3.html#x4-2000012" id="QQ2-4-22">The simple constant maths window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.13 <a 
+href="sun243se3.html#x4-2100013" id="QQ2-4-23">The panner window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.14 <a 
+href="sun243se3.html#x4-2200014" id="QQ2-4-24">The plot configuration window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.15 <a 
+href="sun243se3.html#x4-3600015" id="QQ2-4-51">The region extraction window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.16 <a 
+href="sun243se3.html#x4-3700016" id="QQ2-4-52">The polynomial fitting window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.17 <a 
+href="sun243se3.html#x4-3800017" id="QQ2-4-53">The generate spectra from interpolated lines window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.18 <a 
+href="sun243se3.html#x4-3900018" id="QQ2-4-54">The spectral line fitting window</a></span>
+<br />&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.18.1 <a 
+href="sun243se3.html#x4-400001" id="QQ2-4-55">Saving the results</a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="subsectionToc" >3.19 <a 
+href="sun243se3.html#x4-4100019" id="QQ2-4-56">The filter spectrum window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.20 <a 
+href="sun243se3.html#x4-4200020" id="QQ2-4-57">Quick change of coordinate or data units window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.21 <a 
+href="sun243se3.html#x4-4300021" id="QQ2-4-58">Flip or shift or redshift a spectrum</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.22 <a 
+href="sun243se3.html#x4-4400022" id="QQ2-4-59">Region statistics window</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.23 <a 
+href="sun243se3.html#x4-4500023" id="QQ2-4-60">Display stacked spectra</a></span>
+<br /><span class="sectionToc" >4 <a 
+href="sun243se4.html#x5-460004" id="QQ2-5-61">Supported data formats</a></span>
+<br />&#x00A0;<span class="subsectionToc" >4.1 <a 
+href="sun243se4.html#x5-470001" id="QQ2-5-62">Handling 2 and 3D data</a></span>
+<br /><span class="sectionToc" >5 <a 
+href="sun243se5.html#x6-480005" id="QQ2-6-63">Command-line control and tools</a></span>
+<br /><span class="sectionToc" >6 <a 
+href="sun243se6.html#x7-490006" id="QQ2-7-64">Using SAMP to exchange spectra</a></span>
+<br /><span class="sectionToc" >7 <a 
+href="sun243se7.html#x8-500007" id="QQ2-8-65">Acknowledgements</a></span>
+</div>
+<a 
+ id="x1-2001r1"></a>
+<a 
+ id="x1-3005r5"></a>
+
+<a 
+ id="x1-7001r6"></a>
+
+<a 
+ id="x1-45001r10"></a>
+
+<a 
+ id="x1-47005r61"></a>
+
+<a 
+ id="x1-48003r63"></a>
+
+<a 
+ id="x1-49002r64"></a>
+ 
+</body> 
+</html>
+                                                                                       
+                                                                                       
+                                                                                       
+
+

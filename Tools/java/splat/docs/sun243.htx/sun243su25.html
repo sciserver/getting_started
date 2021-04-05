@@ -1,0 +1,217 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Region statistics window</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+
+<h4 class="subsectionHead"><span class="titlemark">3.22    </span> <a 
+ id="x31-4400022"></a>Region statistics window<a name="xref_stats_window"></a></h4>
+<!--l. 3251--><p class="noindent" >Using this window you can get simple constantly updated statistics on regions of the current
+spectrum, or fuller statistics for the whole spectrum, or collections of regions.
+<!--l. 3255--><p class="noindent" >Constantly updated statistics for regions are:
+     <ul class="itemize1">
+     <li class="itemize">Mean
+     </li>
+     <li class="itemize">Standard deviation
+     </li>
+     <li class="itemize">Minimum
+     </li>
+     <li class="itemize">Maximum
+     </li>
+     <li class="itemize">Integrated flux
+     </li>
+     <li class="itemize">TSYS</li></ul>
+<!--l. 3265--><p class="noindent" >The integrated flux is a numerical estimate and does not require even coordinate spacing. It
+can be removed from this list by deselecting the <b>Options-&#x003E;Show flux integral</b> item. This
+can be used to quickly estimate the flux in a line, providing your spectra are background
+subtracted.
+<!--l. 3272--><p class="noindent" >The TSYS value is a system temperature estimate and requires data from the JCMT, or you
+can set the necessary parameters by enabling the <b>Options-&#x003E;Set TSYS parameters</b> item,
+which reveals a set of controls not seen by default. Note that the effective exposure time
+is:
+                                                                                       
+                                                                                       
+<div class="math-display"><!--l. 3276--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+                               <msub><mrow 
+><mi 
+>t</mi></mrow><mrow 
+><mi 
+>e</mi><mi 
+>f</mi><mi 
+>f</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>t</mi></mrow><mrow 
+><mi 
+>o</mi><mi 
+>n</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">&#x2217;</mo><msub><mrow 
+><mi 
+>t</mi></mrow><mrow 
+><mi 
+>o</mi><mi 
+>f</mi><mi 
+>f</mi></mrow></msub 
+><mo 
+class="MathClass-bin">/</mo><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>t</mi></mrow><mrow 
+><mi 
+>o</mi><mi 
+>n</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>t</mi></mrow><mrow 
+><mi 
+>o</mi><mi 
+>f</mi><mi 
+>f</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow>
+</mrow></math></div>
+<!--l. 3278--><p class="nopar" > where <!--l. 3279--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>t</mi></mrow><mrow 
+><mi 
+>o</mi><mi 
+>n</mi></mrow></msub 
+></math>
+and <!--l. 3279--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>t</mi></mrow><mrow 
+><mi 
+>o</mi><mi 
+>f</mi><mi 
+>f</mi></mrow></msub 
+></math> are
+the integration times spent on and off the source. The backend degradation factor is instrument
+specific.
+<!--l. 3283--><p class="noindent" >When you use the buttons along the bottom of the window these statistics are extended to also
+include:
+     <ul class="itemize1">
+     <li class="itemize">Median
+     </li>
+     <li class="itemize">Mode
+     </li>
+     <li class="itemize">Sum
+     </li>
+     <li class="itemize">Number of data points</li></ul>
+<!--l. 3291--><p class="noindent" >Note that the Mode is determined as <!--l. 3291--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>3</mn> <mo 
+class="MathClass-bin">&#x2217;</mo><mi 
+>M</mi><mi 
+>e</mi><mi 
+>d</mi><mi 
+>i</mi><mi 
+>a</mi><mi 
+>n</mi><mo 
+class="MathClass-bin">&#x2212;</mo> <mn>2</mn> <mo 
+class="MathClass-bin">&#x2217;</mo><mi 
+>M</mi><mi 
+>e</mi><mi 
+>a</mi><mi 
+>n</mi></math>,
+not from a distribution, so will not be correct for highly skewed distributions.
+<!--l. 3294--><p class="noindent" >If you select the <b>Options-&#x003E;Show extra stats</b> menu item you can also see:
+     <ul class="itemize1">
+     <li class="itemize">Sum of squares
+     </li>
+     <li class="itemize">RMS (square root of the mean square)
+     </li>
+     <li class="itemize">Variance
+     </li>
+     <li class="itemize">Standard error
+     </li>
+     <li class="itemize"><!--l. 3301--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>2</mn><mn>5</mn><mi 
+>%</mi></math>
+     and <!--l. 3301--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>7</mn><mn>5</mn><mi 
+>%</mi></math>
+     quantiles
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize">Skew
+     </li>
+     <li class="itemize">Kurtosis</li></ul>
+<!--l. 3305--><p class="noindent" >and if you select <b>Error stats-&#x003E;y</b>ou can get basic statistics on the values that are being used as the
+spectrum errors (or variances).
+<!--l. 3308--><p class="noindent" >To get statistics for the whole of the current spectrum just press the <b>Whole stats</b> button. If you want
+statistics for parts of the spectrum you will need to define the coordinate ranges you want to use (see
+the next part), and then press the <b>Selected stats</b> button to get statistics for the selected regions
+combined together (if none are selected then all regions are used), or <b>All stats</b> to get statistics for all
+the regions combined together.
+<!--l. 3316--><p class="noindent" ><b>Coordinate ranges</b>
+     <div class="quote">
+     <!--l. 3318--><p class="noindent" >This part of the window is used to define the regions of the spectra that you want to
+     see statistics for. Once defined you will see simple, continuously updated, statistics.
+     You can also get fuller statistics using the <b>Selected stats</b> and <b>All stats</b> buttons.
+     <!--l. 3323--><p class="noindent" >To add a region press the <b>Add</b> button and then drag out a region in the display area
+     of the plot window. This should result in the creation of a green rectangular figure.
+     <!--l. 3327--><p class="noindent" >You can interact with the figure, moving it side-to-side and resizing it. To do this
+     point at the figure and press the left mouse button. This &#x2018;selects&#x2019; the figure and adds
+     <code>grips</code> to its exterior. Note that it also becomes the selected row in the <b>Coordinate
+     ranges:</b> table. To move the figure just drag it and to resize it drag a grip (the little
+     black  squares).  The  associated  coordinate  range  in  the  table  updates  with  these
+     changes.
+     <!--l. 3335--><p class="noindent" >To add a second range just press <b>Add</b> and repeat. The ranges can be overlapped or
+     not.
+     <!--l. 3338--><p class="noindent" >To fine tune the ranges you can edit the values in the ranges table, just point at
+     the coordinate you want to change and double click the left mouse button.  This
+     should enable the text editing cursor. Just make the modifications you want and
+     press <code>&#x003C;Return&#x003E;</code> to make the changes permanent.  (Note: if your spectra have sky
+     coordinates shown for the X axis, then you should use the same format for your
+     edits).
+     <!--l. 3345--><p class="noindent" >To read a set of ranges from a disk file choose the <b>File-&#x003E;Read ranges</b> menu item.
+     The format of the input file is simple. It should have at least two fields separated
+     by whitespace or commas. Comments are indicated by lines starting with a hash (#)
+     and are ignored. You can also save the ranges and simple statistics to disk file using
+     (<b>File-&#x003E;Save ranges</b>). It is also possible to append the contents of the <b>Full stats log:</b>
+     region to the file <code>SPLATStats.log</code> by pressing the <b>Save to log file</b> button.</div>
+<!--l. 3356--><p class="noindent" ><b>Accelerator keys</b>
+     <ul class="itemize1">
+     <li class="itemize"><b>Control-s</b> Show full stats for all the selected ranges.
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize"><b>Control-l</b> Show full stats for all the ranges.
+     </li>
+     <li class="itemize"><b>Control-h</b> Show full stats for the whole spectrum,
+     </li>
+     <li class="itemize"><b>Control-d</b> Add a coordinate range (interactive or non-interactive).
+     </li>
+     <li class="itemize"><b>Control-e</b> Delete the selected coordinate ranges.
+     </li>
+     <li class="itemize"><b>Control-w</b> Close the window.
+     </li>
+     <li class="itemize"><b>F1</b> Display help on <span class="sf">SPLAT-VO </span>.
+     </li>
+     <li class="itemize"><b>Shift-F1</b> Display help on window.</li></ul>
+<!--l. 3371--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<!--l. 3372--><p class="noindent" ><a 
+ id="tailsun243su25.html"></a> 
+</body> 
+</html>

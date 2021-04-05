@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Quick change of coordinate or data units window</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+
+<h4 class="subsectionHead"><span class="titlemark">3.20    </span> <a 
+ id="x29-4200020"></a>Quick change of coordinate or data units window<a name="xref_change_units_window"></a></h4>
+<!--l. 3045--><p class="noindent" >This window allows you to change the coordinate or data units of the current spectrum to a limited
+number of preset values. You can only change units when the current spectrum already has a correctly
+set coordinate system or data units.
+<!--l. 3050--><p class="noindent" >If you need to set the coordinates or data units you must use the two toolboxes available in the main
+window. These also offer considerably more flexibility, particularly when defining spectral
+coordinates.
+<!--l. 3054--><p class="noindent" >If you do not want to change the units of an axis, just leave the value set at <b>Not set or
+unrecognised</b>.
+<!--l. 3057--><p class="noindent" >When you see the value <b>Not set or unrecognised</b>, that means that the current spectrum has no
+properly defined coordinates or data units for that axis (as appropriate), or, that the settings do not
+match one of the pre-defined set that you can switch to. Note that data units which match one of the
+preset values dimensionally will be displayed in the preset format, so may not match values shown
+elsewhere, say in the plot labels.
+<!--l. 3064--><p class="noindent" >When the plot is displaying more than one spectrum, only the current one is actually modified. If you
+want the other spectra to be drawn as if in the same coordinates or data units, then you must make
+sure that the menu item <b>Options-&#x003E;Match coordinates and/or fluxes</b> is selected, but this will
+only work when all the displayed spectra have proper spectral coordinates and data units
+defined.
+<!--l. 3071--><p class="noindent" >The <b>SideBand:</b> control is for switching between sidebands (upper and lower) when display spectra
+that are derived from a dual sideband instrument. This is not available when your spectra do not have
+this feature. When displaying a dual sideband spectrum the inactive sideband coordinates will be
+displayed along the unused X axis (usually the top). You can also use this control to display
+coordinates offset from the Local Oscillator value.
+<!--l. 3079--><p class="noindent" >The <b>Origin:</b> control allows you to display offset coordinates. In this case you can select
+to have no offset (<b>None</b>), use the existing offset, if defined (<b>Default</b>, usually the same as
+<b>None</b>), or display coordinates offset from the rest frequency. Note for velocities this last
+option isn&#x2019;t useful as they are already displayed offset from this value. If you want to set
+another value as the origin then you need to use the advanced toolbox available in the main
+window.
+<!--l. 3087--><p class="noindent" >The <b>Standard of rest:</b> control allows you to switch between the various supported rest
+frames. If the current spectrum doesn&#x2019;t support these the value will be set to <b>Not set or
+unrecognised</b>.
+                                                                                       
+                                                                                       
+<!--l. 3091--><p class="noindent" >The <b>Rest Frequency:</b> field displays the current rest frequency in <b>GHz</b>. This can be changed in two
+ways, either by selecting a position along the plot X axis, which you start by pressing the
+<b>Pick pos</b> button and then clicking on the plot, or by selecting a line identifier, which you
+do by pressing the <b>Pick ID</b> button and clicking on the plot in the vicinity of the desired
+label. When picking a line identifier the rest frequency is set to that of the line, not of the
+position that it currently occupies on the plot (these will differ if the spectrum has a source
+velocity).
+<!--l. 3101--><p class="noindent" ><b>Accelerator keys</b>
+     <ul class="itemize1">
+     <li class="itemize"><b>Control-a</b>  Apply  UI  values  converting  from  existing  coordinates  and/or  data  units  to
+     new ones.
+     </li>
+     <li class="itemize"><b>Control-w</b> Close the window.
+     </li>
+     <li class="itemize"><b>F1</b> Display help on <span class="sf">SPLAT-VO </span>.
+     </li>
+     <li class="itemize"><b>Shift-F1</b> Display help on window.</li></ul>
+<!--l. 3113--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<!--l. 3114--><p class="noindent" ><a 
+ id="tailsun243su23.html"></a> 
+</body> 
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Flip or shift or redshift a spectrum</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+
+<h4 class="subsectionHead"><span class="titlemark">3.21    </span> <a 
+ id="x30-4300021"></a>Flip or shift or redshift a spectrum<a name="xref_flipper_window"></a></h4>
+<!--l. 3116--><p class="noindent" >This window allows you to do three related jobs.
+     <ul class="itemize1">
+     <li class="itemize">Create and optionally flip a copy of the current spectrum.
+     </li>
+     <li class="itemize">Shift an editable spectrum.
+     </li>
+     <li class="itemize">Redshift an editable spectrum.</li></ul>
+<!--l. 3123--><p class="noindent" >Flipping and shifting a spectrum allows you to assess the symmetry of a line. Shifting alone
+to determine how well spectra are aligned and redshifting to transform a spectrum or
+set of line identifiers to guess or confirm the redshift (all line identifier lists are already
+editable).
+<!--l. 3128--><p class="noindent" >The transformation is applied to the spectrum shown in the <b>Spectrum:</b> drop-down menu. Initially this
+will show any editable spectra displayed in the associated plot (like the line identifiers). If you want
+an editable copy of the current spectrum just press the <b>Copy</b> button.
+<!--l. 3134--><p class="noindent" >One subtlety is that the offset value is either a redshift or a value in the coordinate units of the
+spectrum being modified, depending on whether the <b>Redshift</b> checkbox is selected, or not. The
+coordinate units of the spectrum may not be the same as those of the current spectrum in the plot,
+which can lead to surprising results.
+<!--l. 3140--><p class="noindent" >When applying a redshift it is assumed that the spectrum being modified has a wavelength coordinate
+system, of some kind, unless it has a proper coordinate system defined. In this latter case the only
+restriction is that you cannot have a standard of rest set to &#x2018;Source&#x2019; (as a transformation to and from
+Source is used to determine the redshift transform). In this latter case use the coordinate system
+toolbox to transform to another rest frame first.
+<!--l. 3147--><p class="noindent" >The <b>Reset</b> button returns a spectrum to an offset of zero.
+<!--l. 3149--><p class="noindent" ><b>Visitor lists</b>
+<!--l. 3151--><p class="noindent" >It&#x2019;s often the case that you have a list of lines, in a spectrum, or many spectra, that you&#x2019;d like
+to step through to check the radial velocity or redshift estimates, without the bother of
+reading each spectrum and line, positioning the plot <em>etc.</em>&#x00A0;That&#x2019;s what a visitor list is designed
+for.
+                                                                                       
+                                                                                       
+<!--l. 3156--><p class="noindent" >To use this create a simple text file containing either one, two, three or more whitespace
+separated columns. If one column is present then that is assumed to be the wavelength
+of the lines. If two columns are present then these are the wavelength and an associated
+spectrum. If three or more columns are present then the third columns contains the name
+of the associated spectrum and the second a label to be displayed at the position (when
+the label is missing it is set to the wavelength). Very short examples of the three types
+follow:
+     <div class="quote">
+     <div class="fancyvrb" id="fancyvrb7">  <a 
+ id="x30-43002r1"></a>&#x00A0;6562.8170<br class="fancyvrb" /><a 
+ id="x30-43004r2"></a>&#x00A0;6583.6000<br class="fancyvrb" /><a 
+ id="x30-43006r3"></a>&#x00A0;6716.4700<br class="fancyvrb" /><a 
+ id="x30-43008r4"></a>&#x00A0;6730.8500<br class="fancyvrb" /><a 
+ id="x30-43010r5"></a>&#x00A0;...</div>
+     </div>
+     <div class="quote">
+     <div class="fancyvrb" id="fancyvrb8"> <a 
+ id="x30-43012r1"></a>&#x00A0;6562.8170&#x00A0;spectrum1.fits<br class="fancyvrb" /><a 
+ id="x30-43014r2"></a>&#x00A0;6562.8170&#x00A0;spectrum2.fits<br class="fancyvrb" /><a 
+ id="x30-43016r3"></a>&#x00A0;6562.8170&#x00A0;spectrum3.fits
+     <br class="fancyvrb" /><a 
+ id="x30-43018r4"></a>&#x00A0;6562.8170&#x00A0;spectrum4.fits<br class="fancyvrb" /><a 
+ id="x30-43020r5"></a>&#x00A0;...</div>
+     </div>
+     <div class="quote">
+     <div class="fancyvrb" id="fancyvrb9"> <a 
+ id="x30-43022r1"></a>&#x00A0;6562.8170&#x00A0;HALPHA&#x00A0;&#x00A0;&#x00A0;&#x00A0;spectrum1.fits<br class="fancyvrb" /><a 
+ id="x30-43024r2"></a>&#x00A0;6583.6000&#x00A0;[NII]&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;spectrum1.fits
+     <br class="fancyvrb" /><a 
+ id="x30-43026r3"></a>&#x00A0;6716.4700&#x00A0;[SII]6717&#x00A0;spectrum2.fits<br class="fancyvrb" /><a 
+ id="x30-43028r4"></a>&#x00A0;6730.8500&#x00A0;[SII]6731&#x00A0;spectrum3.fits<br class="fancyvrb" /><a 
+ id="x30-43030r5"></a>&#x00A0;...</div>
+     </div>
+<!--l. 3193--><p class="noindent" >Visitor lists are a type of line identifier spectrum, so can have fully specified spectral coordinate units
+written in a header section (see the line identifier lists in the SPLAT distribution themselves
+for details), so you are not restricted to having all your spectra in the same coordinate
+systems.
+<!--l. 3198--><p class="noindent" >Once the visitor list is loaded <b>File-&#x003E;Read visitor line list</b>, you can start stepping through it using the
+<b>Visitor</b> controls, or jump to a particular line using the drop-down menu. The default behaviour of
+this tool, on each visit, is to create a copy of the current spectrum and then flip it centred
+on the line (the current zoom is also preserved). It you&#x2019;d like to not create a copy of the
+spectrum for each visit, or indeed to flip it, then uncheck the <b>Flip</b> checkbox and select the
+menu item <b>Options-&#x003E;One spectrum for visitor</b> (these choices remain enforced between
+sessions).
+<!--l. 3208--><p class="noindent" >Another way to use the visitor controls is to use a line identifier (either a built in one, or one of your
+own) as the visitor list. To do this load the line identifiers in the usual way (in the main window) and
+display them in the plot. You can then make this the visitor list by pressing <b>Set as visitor list</b>. Now
+using the visitor controls you can step between the lines (remember to de-select <b>Flip</b> and select
+<b>Options-&#x003E;One spectrum for visitor</b>, otherwise you&#x2019;ll get the line identifiers copied, flipped and
+maybe reused!).
+<!--l. 3217--><p class="noindent" ><b>SPEFO options</b>
+                                                                                       
+                                                                                       
+     <div class="quote">
+     <!--l. 3219--><p class="noindent" >The  original  motivation  for  creating  this  tool  (suggested  by  Petr  Skoda,  see  the
+     acknowledgements section) was really to do flip comparisons of lines to determine
+     radial velocities in the same fashion as the SPEFO program. This has some additional
+     requirements beyond those required for simple shifting in a linear sense, as well as
+     in redshift, and are enabled by selecting the <b>Options-&#x003E;SPEFO options</b> menu item.
+     This reveals two text areas (you need to resize the window to actually see them first
+     time). The upper one shows the flip corrected offset (that&#x2019;s half the standard shift)
+     and the radial velocity for that flipped shift (calculated as <!--l. 3228--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>c</mi><mo 
+class="MathClass-bin">&#x2217;</mo><mi 
+>O</mi><mi 
+>f</mi><mi 
+>f</mi><mi 
+>s</mi><mi 
+>e</mi><mi 
+>t</mi><mo 
+class="MathClass-bin">&#x2217;</mo> <mn>0</mn><mi 
+>.</mi><mn>5</mn><mo 
+class="MathClass-bin">/</mo><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>F</mi><mi 
+>l</mi><mi 
+>i</mi><mi 
+>p</mi><mi 
+>c</mi><mi 
+>e</mi><mi 
+>n</mi><mi 
+>t</mi><mi 
+>r</mi><mi 
+>e</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>),
+     assuming that the coordinate system is some wavelength.
+     <!--l. 3231--><p class="noindent" >There&#x2019;s also an editable area for writing some notes about the measurement, both
+     these areas are written the file <code>SPEFO.log</code> by pressing the <b>Save to SPEFO.log file</b>
+     button.
+     </div>
+<!--l. 3237--><p class="noindent" ><b>Accelerator keys</b>
+     <ul class="itemize1">
+     <li class="itemize"><b>Control-r</b> Reset interface to defaults.
+     </li>
+     <li class="itemize"><b>Control-w</b> Close the window.
+     </li>
+     <li class="itemize"><b>F1</b> Display help on <span class="sf">SPLAT-VO </span>.
+     </li>
+     <li class="itemize"><b>Shift-F1</b> Display help on window.</li></ul>
+<!--l. 3248--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<!--l. 3249--><p class="noindent" ><a 
+ id="tailsun243su24.html"></a> 
+</body> 
+</html>

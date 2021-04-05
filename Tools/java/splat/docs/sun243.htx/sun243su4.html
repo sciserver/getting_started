@@ -1,0 +1,267 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>The browser window</title> 
+<meta charset=utf-8/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="sun243.css" /> 
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script><style type="text/css">.MathJax_MathML {text-indent: 0;}</style></head><body 
+>
+
+<h4 class="subsectionHead"><span class="titlemark">3.1    </span> <a 
+ id="x10-90001"></a>The browser window<a name="xref_browser_window"></a></h4>
+<!--l. 434--><p class="noindent" >The browser window has several main elements, each of which is shown in the following
+figure:
+<div class="center">
+<img 
+src="browser5.gif" alt="PIC"  
+> </div>
+<!--l. 439--><p class="noindent" ><b>Global list of spectra</b>
+     <div class="quote">
+     <!--l. 441--><p class="noindent" >In the <b>Global list of spectra</b> short names for each5 spectra are shown. The short
+     names are intended to allow the quick identification of spectra and can be modified
+     at any time by selecting the name and then typing a new name in the <b>Short name</b>
+     field  (remember  to  press  <code>&#x003C;Return&#x003E;</code> to  make  the  change  happen).  Initially  short
+     names are read from the <code>TITLE</code> or <code>OBJECT</code> properties of spectral data formats that
+     support these (<em>i.e.</em>&#x00A0;NDF and FITS respectively), otherwise they default to the file
+     name.
+     <!--l. 451--><p class="noindent" >Another important concept related to the global list, is using it to create a selected
+     range or list of the spectra. Selection is important as this identifies which spectra
+     you&#x2019;d like to see properties for, or want to work with. There&#x2019;s a quick tutorial on
+     <a 
+href="sun243su2.html#x7-60002">selecting spectra</a> in the introductory material (&#x00A7;<a 
+href="sun243su2.html#x7-60002">2.2<!--tex4ht:ref: selecting_spectra --></a>).</div>
+<!--l. 459--><p class="noindent" ><b>Properties of current spectra</b>
+     <div class="quote">
+     <!--l. 461--><p class="noindent" >In the properties area there are controls for changing how the currently selected
+     spectra  are  displayed  (a  spectrum  always  uses  the  same  display  properties)  and
+     where they are displayed.
+     <!--l. 465--><p class="noindent" >If more than one spectrum is selected then the properties shown are those of the
+     first spectrum (<em>i.e.</em>&#x00A0;highest in the global list). However, any changes that you then
+     make are applied to all the selected spectra.
+     <!--l. 469--><p class="noindent" >If you load a table into <span class="sf">SPLAT-VO </span>&#x00A0;the <b>Columns:</b> controls will show the names of
+     the columns selected. If these are incorrect then you can choose a different set.
+                                                                                       
+                                                                                       
+     <!--l. 473--><p class="noindent" >The properties that you can change include the colour (press on this to get a swatch
+     of selectable colours), the composite value (that is the transparency so you can see
+     lines or points through other line or points), the line type (simple connected polyline
+     or histogram, or just a point marker). If you choose to draw lines then you can set
+     the width and style (dashed <em>etc.</em>). If you choose to draw points then various types
+     are available.
+     <!--l. 480--><p class="noindent" >If the selected spectra have errors then you can display error bars by clicking on the
+     <b>Error bars:</b> control. This is greyed out if errors are not available. The colour, number
+     of sigma drawn and frequency of the error bars can be changed using the other
+     controls on this line.
+     </div>
+<!--l. 487--><p class="noindent" ><b>Views of current spectra</b>
+     <div class="quote">
+     <!--l. 489--><p class="noindent" >The  views  of  the  current  spectra  region  shows  the  names  of  the  plots  that  are
+     displaying the currently selected spectra (this time if a plot is showing only some
+     of the spectra, then it is highlighted in red). To add a spectrum or list of spectra to
+     a plot, select their names in the global list and then click on the <b>Displayed</b> control
+     (normally this results in a tick appearing). If a plot is already displaying some of
+     the selected spectra then you force it to display them all by clicking twice &#x2013; the first
+     click removes the selected spectra and the second puts them all back, plus the ones
+     not already shown.
+     <!--l. 499--><p class="noindent" >To make a plot visible double click on its name. This should raise and deiconify it.</div>
+<!--l. 503--><p class="noindent" ><b>Toolbar and menus</b>
+     <div class="quote">
+     <!--l. 505--><p class="noindent" >The toolbar region has a series of buttons that act as short-cuts to many of the
+     functions found in the main menus. Here&#x2019;s a quick break down of what they
+     do:
+     <ul class="itemize1">
+     <li class="itemize"><img 
+src="openfile.gif" alt="PIC"  
+>  Create an open file dialogue. You can use this to browse any local files and
+     select a list of them for opening. When opened they are added to the global
+     list and displayed in a new plot (unless you untick the <b>Display</b> control). You
+     may open files that are already in the global list, this just creates a new entry.
+     Normally the type of a spectrum is determined using the file extension, but
+     using this dialogue you can select a type, or ask that it be guessed.
+     </li>
+     <li class="itemize"><img 
+src="location.gif" alt="PIC"  
+>  Download and display a spectrum from the Internet. If you have a URL
+     for a spectrum to view then use this simple dialog.
+     </li>
+     <li class="itemize"><img 
+src="ssap.gif" alt="PIC"  
+>  Query any known Simple Spectral Access Protocol (SSAP) servers about
+     spectra that they hold on a region of the sky and download these to <span class="sf">SPLAT-VO
+     </span>. This tool provides access to the Virtual Observatory.
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize"><img 
+src="obscore.gif" alt="PIC"  
+>    Query  any  known  Observation  Data  Model  Core  (ObsCore)  spectral
+     services  using  the  Table  Access  Protocoll  (TAP)  and  download  these  to
+     <span class="sf">SPLAT-VO </span>. This tool provides access to the Virtual Observatory.
+     </li>
+     <li class="itemize"><img 
+src="browse.gif" alt="PIC"  
+>   Browse a hierarchy of files. This dialogue can be used like the open file
+     dialogue to choose a file containing a spectrum, but, it also allows you to look
+     inside a file for any displayable components. This is useful for FITS files that
+     contain extensions (spectral or table extensions can be opened), or HDS files
+     that contain more than one NDF. The file type guessing used here is the same
+     as that used when you set a type of <code>guess</code> (either on the command-line or by
+     using the open file dialogue).
+        <div class="quote">
+        <!--l. 538--><p class="noindent" ><img 
+src="treeview.gif" alt="PIC"  
+></div>
+     </li>
+     <li class="itemize"><img 
+src="reopen.gif" alt="PIC"  
+>  Re-open the selected spectra. If the files containing your spectra change on disk
+     you can select them in the global list get them opened. Note that not all spectra are
+     backed by a suitable disk-file, these types will be ignored.
+     </li>
+     <li class="itemize"><img 
+src="savefile.gif" alt="PIC"  
+>  Create a save file dialogue. Using this you can save a spectrum to disk-file. There
+     are no restrictions on which file format you can save to, but information may be lost
+     for certain types (<em>i.e.</em>&#x00A0;TEXT format).
+     </li>
+     <li class="itemize"><img 
+src="remove.gif" alt="PIC"  
+>  Remove the currently selected spectra from the global list. This does not modify
+     disk files. Spectra that are only resident in memory will be lost, without
+     warning.
+     </li>
+     <li class="itemize"><img 
+src="display.gif" alt="PIC"  
+>  Display the currently selected spectra in plots. Each of the selected spectra is
+     displayed in a plot of its own. A similar effect is obtained by double-clicking a
+     spectrum in the global list.
+     </li>
+     <li class="itemize"><img 
+src="multidisplay.gif" alt="PIC"  
+>  Display all the currently selected spectra in a single plot. Use this when you want
+     to compare spectra.
+     </li>
+     <li class="itemize"><img 
+src="animate.gif" alt="PIC"  
+>  Open a window to control the animation of some of the spectra. Using this
+     window you can also create a JPEG or PNG sequence of the animation.
+     </li>
+     <li class="itemize"><img 
+src="table.gif" alt="PIC"  
+>  View and possibly modify the coordinates and data values of the
+     selected spectra. This shows an editable table of values. It is also possible to
+     make global changes using algebraic expressions to convert or create new
+     values.
+     </li>
+     <li class="itemize"><img 
+src="xunits.gif" alt="PIC"  
+>  Open a window to set or remap the coordinate systems of any of the
+     spectra. A variety of systems can be used covering wavelength, frequency,
+                                                                                       
+                                                                                       
+     energy and velocity. Unit information can be used to align spectra in a plot
+     (so you can trivially compare spectra in say angstroms and nanometres,
+     energy and frequency or even heliocentric and topocentric rest frames
+     <em>etc.</em>).
+     </li>
+     <li class="itemize"><img 
+src="yunits.gif" alt="PIC"  
+>  Open a window to set the data units of any spectra. This can be useful when
+     just setting the units displayed in a plot, but can also be used to convert
+     spectra between flux systems when they are drawn (making them correctly
+     aligned).
+     </li>
+     <li class="itemize">  View the FITS headers of any selected spectra. A window displaying the headers
+     will be opened for each of the selected spectra. Note that only 1D FITS and NDFs
+     will generally have FITS headers other types, including FITS tables, will
+     not.
+     </li>
+     <li class="itemize"><img 
+src="rainbow.gif" alt="PIC"  
+>  Change the colour of <code>all</code> the spectra in the global list. Each time you press this
+     button a new random seed is used to generate a different sequence of colours, so keep
+     pressing until you see a sequence you like.
+     </li>
+     <li class="itemize"><img 
+src="binarymath.gif" alt="PIC"  
+>  Perform simple maths (add, subtract, divide and multiply) between pairs of
+     spectra.
+     </li>
+     <li class="itemize"><img 
+src="unarymaths.gif" alt="PIC"  
+>  Perform simple maths using a spectrum and a constant (add, subtract, divide
+     and multiply).
+     </li>
+     <li class="itemize"><img 
+src="samp.gif" alt="PIC"  
+>  Opens SAMP control window. If <span class="sf">SPLAT-VO </span>is registered to a SAMP hub, the icon
+     changes to <img 
+src="sampgo.gif" alt="PIC"  
+> .
+     </li>
+     <li class="itemize"><img 
+src="help.gif" alt="PIC"  
+>  Access the on-line help system.
+     </li></ul>
+     <!--l. 607--><p class="noindent" >Interesting menu items not found in the toolbar are a list of standard line position
+     catalogues (for optical and some IR and submillimeter lines), these are found in
+     <b>Options-&#x003E;Line identifiers</b>. Others are to do with controlling the selection of the spectra
+     and plots (see the <b>Edit</b> menu, just like deleting spectra from the global list you can delete
+     all the selected plots) and changing the &#x2018;look and feel&#x2019; of <span class="sf">SPLAT-VO </span>. These options are
+     found in the <b>Options-&#x003E;Look and Feel</b> and <b>Options-&#x003E;Colour Theme</b> sub-menus. Note that
+     if you select the CDE/Motif look and feel you cannot change the colour and fonts
+     used.
+     <!--l. 617--><p class="noindent" >You can also save and restore the global stack of spectra to and from diskfile using a special
+     data format that is only recognised by <span class="sf">SPLAT-VO </span>. Using this method allows you to save a
+     working set of spectra and restart an analysis later. Properties such as the line colours are
+     restored, but any relationship between disk files and the spectra in the global list is lost.
+     Data saved in a stack are compressed.
+     <!--l. 624--><p class="noindent" >The <b>Interop</b> menu contains items for communicating with other SAMP-aware desktop
+     applications. This is described in the <a 
+href="sun243se6.html#x36-490006">Tool interoperability</a> section (&#x00A7;<a 
+href="sun243se6.html#x36-490006">6<!--tex4ht:ref: interop --></a>).
+                                                                                       
+                                                                                       
+     <!--l. 629--><p class="noindent" >Finer control of the initial coordinate system picked by <span class="sf">SPLAT-VO </span>&#x00A0;is given by the
+     <b>Options-&#x003E;Find spectral coordinates</b> menu item. When this is selected (the default),
+     <span class="sf">SPLAT-VO </span>&#x00A0;will check for any spectral coordinate system in the input spectra and use that,
+     if the default coordinate system isn&#x2019;t spectral. It will also use any units it can locate to
+     attempt a guess if all else fails. Unfortunately this means that if you intend to
+     view another coordinate system (like GRID to see the channel numbers), it
+     might fail, so switching this off gives you complete control. This option can
+     also be enabled using the <span class="obeylines-h"><span class="verb">-k,--keepcoords</span></span> switches on the command-line.
+     <br 
+class="newline" /></div>
+<!--l. 641--><p class="noindent" ><b>Accelerator keys</b>
+     <ul class="itemize1">
+     <li class="itemize"><b>Control-o</b> Activate open file dialog.
+     </li>
+     <li class="itemize"><b>Control-l</b> Activate location dialog.
+     </li>
+     <li class="itemize"><b>Control-r</b> Re-open all spectra.
+     </li>
+     <li class="itemize"><b>Control-w</b> Close window (and exit application).
+     </li>
+     <li class="itemize"><b>Delete</b> Remove selected spectra.
+     </li>
+     <li class="itemize"><b>Control-a</b> Select all spectra.
+     </li>
+     <li class="itemize"><b>Control-d</b> Display selected spectra in plots.
+     </li>
+     <li class="itemize"><b>Control-i</b> Display selected spectra in same plot.
+     </li>
+     <li class="itemize"><b>Control-u</b> Re-colour all spectra.
+     </li>
+     <li class="itemize"><b>F1</b> Display help on <span class="sf">SPLAT-VO </span>.
+     </li>
+     <li class="itemize"><b>Shift-F1</b> Display help on window.</li></ul>
+<!--l. 657--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<!--l. 658--><p class="noindent" ><a 
+ id="tailsun243su4.html"></a> 
+</body> 
+</html>
