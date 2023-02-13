@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+future/gpu/GalaxyZooHyperSpectralCNN/data/gal_00001.hdf5
+future/gpu/GalaxyZooHyperSpectralCNN/data/gal_00002.hdf5
+future/gpu/GalaxyZooRGB/zoo_images.npy
