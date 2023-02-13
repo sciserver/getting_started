@@ -1,3 +1,9 @@
 [submodule "astronomy/sdss/sdss_mosaics/MontageNotebooks"]
 	path = astronomy/sdss/sdss_mosaics/MontageNotebooks
 	url = https://github.com/Caltech-IPAC/MontageNotebooks.git
+[submodule "astronomy/teaching/astronomy_labs"]
+	path = astronomy/teaching/astronomy_labs
+	url = https://github.com/brittlundgren/SDSS-EPO.git
+[submodule "astronomy/teaching/astro101"]
+	path = astronomy/teaching/astro101
+	url = https://github.com/ritatojeiro/SDSSEPO.git
