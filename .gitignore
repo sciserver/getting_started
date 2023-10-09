@@ -1,3 +1,10 @@
+# Ignore data files
+data/
+data01_01
+
+# Ignore templates
+Template.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
