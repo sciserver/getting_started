@@ -14,7 +14,7 @@ The <strong><code>getting_started</code></strong> Data Volume contains many exam
     <li>Click Create; your new container will appear in the list</li>
     <li>Click on the name of the container to launch</li>
     <li>Click on <strong><code>getting_started</code></strong> to see the example notebooks</li>
-    <li>Click on <strong><code>welcome.ipynb</code></strong> to open the first example</li>
+    <li>Click on <strong><code>starthere.ipynb</code></strong> to open the first example</li>
 </ol>
 
 If you have any questions, please email us at sciserver-helpdesk@jhu.edu.
